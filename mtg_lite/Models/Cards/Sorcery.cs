@@ -20,15 +20,18 @@ namespace mtg_lite.Models.Cards
 
             if (Type.ToLower().Equals("blightning"))
             {
-                CardType = new Blightning("blightning", );
+                Mana manaBlightning = new Mana(1,0,0,1,1,1);
+                CardType = new Sorcery("blightning",manaBlightning, Resource.blightning);
             }
             else if (Type.ToLower().Equals("chain_lightning"))
             {
-                CardType = new ChainLightning("chain_lightning");
+                Mana manaChainLightning = new Mana(0,0,0,1,0,0);
+                CardType = new Sorcery("chain_lightning", manaChainLightning, Resource.chain_lightning);
             }
             else if (Type.ToLower().Equals("clone_legion"))
             {
-                CardType = new CloneLegion("clone_legion");
+                Mana manaCloneLegion = new Mana(0,2,0,0,0,7);
+                CardType = new Sorcery("clone_legion", manaCloneLegion, Resource.clone_legion);
             }
             return CardType;
         }

@@ -14,6 +14,7 @@ namespace mtg_lite.Models.Zones
 
         static LibraryManager()
         {
+
         }
 
         public static List<Card> GetCards(string libraryName)
@@ -23,6 +24,10 @@ namespace mtg_lite.Models.Zones
                 return libraries[libraryName];
             }
             return new List<Card>();
+        }
+
+        public static void Shuffle()
+        {
         }
     }
 }

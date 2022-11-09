@@ -25,5 +25,9 @@ namespace mtg_lite.Models.Zones
             }
             return new List<Card>();
         }
+
+        public static void Shuffle()
+        {
+        }
     }
 }

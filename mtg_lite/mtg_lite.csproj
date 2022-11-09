@@ -23,4 +23,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Cards\Permanents\Land\" />
+    <Folder Include="Models\Cards\Permanents\Creatures\" />
+  </ItemGroup>
+
 </Project>

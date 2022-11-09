@@ -15,21 +15,27 @@ namespace mtg_lite.Models.Zones
         protected List<Card> cards;
         protected Player player;
 
-        public List<Card> Cards { get { return cards; } }
-        public string Name { get => "Zone"; }
-        public virtual Card TopCard {
+        public List<Card> Cards
+        { get { return cards; } }
+
+        public abstract string Name { get => "Zone"; }
+
+        public virtual Card TopCard
+        {
             get
             {
                 if (cards.Count == 0)
                 {
                     return new DarkCardBack();
                 }
-                return cards[cards.Count-1];
+                return cards[cards.Count - 1];
             }
         }
 
         public event EventHandler<List<Card>>? CardsChanged;
+
         public event EventHandler<Card>? CardAdded;
+
         public event EventHandler<Card>? CardRemoved;
 
         public Zone(List<Card> cards, Player player)

@@ -14,6 +14,7 @@ namespace mtg_lite.Models.Zones
 
         static LibraryManager()
         {
+
         }
 
         public static List<Card> GetCards(string libraryName)

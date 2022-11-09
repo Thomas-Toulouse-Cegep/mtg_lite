@@ -45,6 +45,7 @@ namespace mtg_lite.Models.Players
 
         public void PlayCard(Card card)
         {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards
 {
-    internal class Permanent
+    internal class Permanent 
     {
     }
 }

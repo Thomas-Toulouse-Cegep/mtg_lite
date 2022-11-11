@@ -10,9 +10,13 @@ namespace mtg_lite.Models.Cards
 {
     internal class Sorcery : Card
     {
+        private bool isPermanent1 = false;
+
         public Sorcery(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
         {
         }
+
+        public bool IsPermanent1 { get => isPermanent1;}
 
         public static Card SorceryFactory(string Type)
         {

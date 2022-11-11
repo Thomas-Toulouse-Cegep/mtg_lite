@@ -29,7 +29,7 @@ namespace mtg_lite.Models.Players
             battlefield = new Zone(new List<Card>(), this);
             graveyard = new Zone(new List<Card>(), this);
             hand = new Zone(new List<Card>(), this);
-            this.library = new Zone(LibraryManager.GetCards(libraryName), this);
+            this.library = new Library(LibraryManager.GetCards(libraryName), this);
             Subscribe();
         }
 
@@ -45,7 +45,6 @@ namespace mtg_lite.Models.Players
 
         public void PlayCard(Card card)
         {
-
         }
     }
 }

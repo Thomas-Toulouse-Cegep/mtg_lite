@@ -20,9 +20,9 @@ namespace mtg_lite.Models.Zones
 
         public static List<Card> GetCards(string libraryName)
         {
-            if (libraries.ContainsKey(libraryName))
+            if (libraries.ContainsKey("librairieCard"))
             {
-                return libraries[libraryName];
+                return libraries["librairieCard"];
             }
             return new List<Card>();
         }

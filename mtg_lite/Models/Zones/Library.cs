@@ -11,15 +11,26 @@ namespace mtg_lite.Models.Zones
     internal class Library : Zone
     {
         private static Random rng = new Random();
-        private static List<Card> shuffledcards; //= cards.OrderBy(a => rng.Next());
+        //private static List<Card> shuffledcards; //= cards.OrderBy(a => rng.Next());
 
         public Library(List<Card> cards, Player player) : base(cards, player)
         {
+            cards = cards.ToList();
+            if (cards[0].Tapped)
+            {
+            }
+            Shuffle();
         }
 
-        public void Shuffle()
+        public List<Card> Shuffle()
         {
             cards.OrderBy(a => rng.Next()).ToList();
+            return cards;
+        }
+
+        public override string ToString()
+        {
+            return $"{"Library"} ({cards.Count})";
         }
     }
 }

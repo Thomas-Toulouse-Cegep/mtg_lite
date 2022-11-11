@@ -26,9 +26,9 @@ namespace mtg_lite.Models.Players
         public Player(string libraryName)
         {
             manaPool = new Mana();
-            battlefield = new Zone(new List<Card>(), this);
-            graveyard = new Zone(new List<Card>(), this);
-            hand = new Zone(new List<Card>(), this);
+            battlefield = new Battlefield(new List<Card>(), this);
+            graveyard = new Graveyard(new List<Card>(), this);
+            hand = new Hand(new List<Card>(), this);
             this.library = new Library(LibraryManager.GetCards(libraryName), this);
             Subscribe();
         }

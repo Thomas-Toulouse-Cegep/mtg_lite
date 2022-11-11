@@ -1,5 +1,4 @@
-﻿using mtg_lite.Models.Cards.Sorcerys;
-using MTGO_lite.Models.Manas;
+﻿using MTGO_lite.Models.Manas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace mtg_lite.Models.Cards
         {
         }
 
-        public bool IsPermanent1 { get => isPermanent1;}
+        public bool IsPermanent1 { get => isPermanent1; }
 
         public static Card SorceryFactory(string Type)
         {
@@ -24,17 +23,17 @@ namespace mtg_lite.Models.Cards
 
             if (Type.ToLower().Equals("blightning"))
             {
-                Mana manaBlightning = new Mana(1,0,0,1,1,1);
-                CardType = new Sorcery("blightning",manaBlightning, Resource.blightning);
+                Mana manaBlightning = new Mana(1, 0, 0, 1, 1, 1);
+                CardType = new Sorcery("blightning", manaBlightning, Resource.blightning);
             }
             else if (Type.ToLower().Equals("chain_lightning"))
             {
-                Mana manaChainLightning = new Mana(0,0,0,1,0,0);
+                Mana manaChainLightning = new Mana(0, 0, 0, 1, 0, 0);
                 CardType = new Sorcery("chain_lightning", manaChainLightning, Resource.chain_lightning);
             }
             else if (Type.ToLower().Equals("clone_legion"))
             {
-                Mana manaCloneLegion = new Mana(0,2,0,0,0,7);
+                Mana manaCloneLegion = new Mana(0, 2, 0, 0, 0, 7);
                 CardType = new Sorcery("clone_legion", manaCloneLegion, Resource.clone_legion);
             }
             return CardType;

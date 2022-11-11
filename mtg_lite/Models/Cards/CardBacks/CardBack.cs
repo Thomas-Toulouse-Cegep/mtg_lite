@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards.CardBacks
 {
-    public class CardBack: Card
+    public class CardBack : Card
     {
         public CardBack() : base("Card Back", new Mana(), Resource.card_back)
         {

@@ -28,6 +28,7 @@ namespace mtg_lite.Models.Zones
 
         public static void Shuffle()
         {
+
         }
     }
 }

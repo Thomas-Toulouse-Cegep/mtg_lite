@@ -10,7 +10,7 @@ namespace mtg_lite.Models.Zones
 {
     internal class Library : Zone
     {
-        private static Random rng = new Random();
+        private Random rng = new Random();
         //private static List<Card> shuffledcards; //= cards.OrderBy(a => rng.Next());
 
         public Library(List<Card> cards, Player player) : base(cards, player)
@@ -24,7 +24,7 @@ namespace mtg_lite.Models.Zones
 
         public List<Card> Shuffle()
         {
-            cards.OrderBy(a => rng.Next()).ToList();
+            cards = cards.OrderBy(a => rng.Next()).ToList();
             return cards;
         }
 

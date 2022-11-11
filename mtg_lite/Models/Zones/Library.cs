@@ -16,6 +16,7 @@ namespace mtg_lite.Models.Zones
         public Library(List<Card> cards, Player player) : base(cards, player)
         {
             cards = cards.ToList();
+            //this.RemoveCard(cards.First());
             if (cards[0].Tapped)
             {
             }
@@ -26,6 +27,13 @@ namespace mtg_lite.Models.Zones
         {
             cards = cards.OrderBy(a => rng.Next()).ToList();
             return cards;
+        }
+
+        public override void i()
+        {
+            RemoveCard(cards.Last());
+
+            //this.RemoveCard(cards.First());
         }
 
         public override string ToString()

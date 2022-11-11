@@ -12,6 +12,14 @@ namespace mtg_lite.Models.Zones
     {
         public Hand(List<Card> cards, Player player) : base(cards, player)
         {
+            // player.Hand.AddCard(cards);
+            /*CardAdded?.Invoke(this, card);
+            CardsChanged?.Invoke(this, cards); */
+        }
+
+        public List<Card> AddCard()
+        {
+            return cards;
         }
 
         public override string ToString()

@@ -36,9 +36,11 @@
             // grpHand
             // 
             this.grpHand.Controls.Add(this.rowOfCardsDisplay);
-            this.grpHand.Location = new System.Drawing.Point(3, 3);
+            this.grpHand.Location = new System.Drawing.Point(2, 2);
+            this.grpHand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpHand.Name = "grpHand";
-            this.grpHand.Size = new System.Drawing.Size(1619, 333);
+            this.grpHand.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHand.Size = new System.Drawing.Size(1295, 266);
             this.grpHand.TabIndex = 1;
             this.grpHand.TabStop = false;
             this.grpHand.Text = "Hand";
@@ -47,19 +49,22 @@
             // 
             this.rowOfCardsDisplay.BackColor = System.Drawing.SystemColors.Control;
             this.rowOfCardsDisplay.Cards = null;
-            this.rowOfCardsDisplay.Location = new System.Drawing.Point(8, 22);
+            this.rowOfCardsDisplay.Location = new System.Drawing.Point(6, 18);
+            this.rowOfCardsDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rowOfCardsDisplay.Name = "rowOfCardsDisplay";
-            this.rowOfCardsDisplay.Size = new System.Drawing.Size(1600, 300);
+            this.rowOfCardsDisplay.Size = new System.Drawing.Size(1280, 240);
             this.rowOfCardsDisplay.TabIndex = 0;
             this.rowOfCardsDisplay.CardClicked += new System.EventHandler<mtg_lite.Models.Cards.Card>(this.rowOfCardsDisplay_CardClicked);
+            this.rowOfCardsDisplay.Load += new System.EventHandler(this.rowOfCardsDisplay_Load);
             // 
             // HandDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpHand);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HandDisplay";
-            this.Size = new System.Drawing.Size(1631, 344);
+            this.Size = new System.Drawing.Size(1305, 275);
             this.grpHand.ResumeLayout(false);
             this.ResumeLayout(false);
 

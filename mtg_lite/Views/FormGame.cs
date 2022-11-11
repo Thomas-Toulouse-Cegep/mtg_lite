@@ -21,5 +21,9 @@ namespace mtg_lite
             handDisplay.Hand = controller.Player.Hand;
             battlefieldDisplay.Battlefield = controller.Player.Battlefield;
         }
+
+        private void libraryDisplay_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Cards.CardBacks;
 using mtg_lite.Models.Players;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,18 @@ namespace mtg_lite.Models.Zones
             RemoveCard(cards.Last());
 
             //this.RemoveCard(cards.First());
+        }
+
+        public override Card TopCard
+        {
+            get
+            {
+                if (cards.Count == 0)
+                {
+                    return new DarkCardBack();
+                }
+                return new CardBack();
+            }
         }
 
         public override string ToString()

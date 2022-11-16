@@ -56,7 +56,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void cardDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
-            zone.AJoutCard();
+            zone.Cardclick();
         }
 
         private void Zone_CardAdded(object? sender, Models.Cards.Card e)
@@ -65,6 +65,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         }
 
         private void cardDisplay_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void TopCardZoneDisplay_Load(object sender, EventArgs e)
         {
         }
     }

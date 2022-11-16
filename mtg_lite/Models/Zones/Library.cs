@@ -32,20 +32,20 @@ namespace mtg_lite.Models.Zones
             return cards;
         }
 
-        public override void AJoutCard()
+        public override Card TopCard => base.TopCard;
+
+        public override string ToString()
+        {
+            return $"{"Library"} ({cards.Count})";
+        }
+
+        public override void Cardclick(Card card)
         {
             if (cards.Count == 0)
             {
                 return;
             }
             RemoveCard(cards.Last());
-        }
-
-        public override Card TopCard => base.TopCard;
-
-        public override string ToString()
-        {
-            return $"{"Library"} ({cards.Count})";
         }
     }
 }

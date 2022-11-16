@@ -20,7 +20,7 @@ namespace mtg_lite.Models.Zones
             CardsChanged?.Invoke(this, cards); */
         }
 
-        public override void AJoutCard()
+        public override void Cardclick()
         {
             if (cards.Count == 0)
             {

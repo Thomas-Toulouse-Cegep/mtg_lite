@@ -59,9 +59,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cardDisplay);
             this.Controls.Add(this.lblZoneName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TopCardZoneDisplay";
             this.Size = new System.Drawing.Size(439, 464);
+            this.Load += new System.EventHandler(this.TopCardZoneDisplay_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -25,5 +25,9 @@ namespace mtg_lite
         private void libraryDisplay_Load(object sender, EventArgs e)
         {
         }
+
+        private void handDisplay_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

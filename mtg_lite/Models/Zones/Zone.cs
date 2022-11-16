@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
-    public class Zone
+    public abstract class Zone
     {
         protected List<Card> cards;
         protected Player player;
@@ -64,9 +64,7 @@ namespace mtg_lite.Models.Zones
             cards.RemoveAt(cards.Count - 1);
         }
 
-        public virtual void i()
-        {
-        }
+        public abstract void Cardclick(Card card);
 
         public override string ToString()
         {

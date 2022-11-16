@@ -60,10 +60,11 @@
             // 
             this.handDisplay.Hand = null;
             this.handDisplay.Location = new System.Drawing.Point(184, 546);
-            this.handDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.handDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.handDisplay.Name = "handDisplay";
             this.handDisplay.Size = new System.Drawing.Size(1300, 271);
             this.handDisplay.TabIndex = 3;
+            this.handDisplay.Load += new System.EventHandler(this.handDisplay_Load);
             // 
             // manaPoolDisplay
             // 

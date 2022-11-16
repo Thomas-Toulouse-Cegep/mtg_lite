@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards.Permanent
 {
-    internal class Land : Card
+    internal class Land : Permanents
     {
         public Land(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
         {

@@ -26,7 +26,7 @@ namespace mtg_lite.Models.Zones
             {
                 return;
             }
-            RemoveCard(cards.Last());
+            RemoveCard(card);
         }
 
         public override string ToString()

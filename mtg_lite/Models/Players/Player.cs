@@ -41,6 +41,7 @@ namespace mtg_lite.Models.Players
 
         private void Hand_CardRemoved(object? sender, Card card)
         {
+            PlayCard(card);
             battlefield.AddCard(card);
         }
 
@@ -51,6 +52,40 @@ namespace mtg_lite.Models.Players
 
         public void PlayCard(Card card)
         {
+            if (card.Tapped)
+            {
+                MessageBox.Show("Is tapped."); //test message
+
+                if (card.IsPermanent)
+                {
+                    MessageBox.Show("Is permanent."); //test message
+                }
+                else
+                {
+                    //====> sorcery <====\\
+                    MessageBox.Show("Is not permanent."); //test message
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("Is not tapped."); //test message
+
+                if (card.GetType().ToString() == "Creatures")
+                {
+                    MessageBox.Show("Is Creature."); //test message
+                }
+                else if (card.GetType().ToString() == "Land")  
+                {
+                    MessageBox.Show("Is Land."); //test message
+                }
+                else if (card.GetType().ToString() == "Sorcery")
+                {
+                    MessageBox.Show("Is Sorcery."); //test message
+                }
+            }
+
+            MessageBox.Show(card.Name); //test message
         }
     }
 }

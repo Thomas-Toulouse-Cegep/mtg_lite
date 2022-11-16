@@ -14,6 +14,11 @@ namespace mtg_lite.Models.Zones
         {
         }
 
+        public override void Cardclick(Card card)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
             return $"{"Graveyard"} ({cards.Count})";

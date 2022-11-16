@@ -12,14 +12,16 @@ namespace mtg_lite.Models.Zones
     internal class Library : Zone
     {
         private Random rng = new Random();
-        //private static List<Card> shuffledcards; //= cards.OrderBy(a => rng.Next());
 
         public Library(List<Card> cards, Player player) : base(cards, player)
         {
             cards = cards.ToList();
-            //this.RemoveCard(cards.First());
-            if (cards[0].Tapped)
+            foreach (Card card in cards)
             {
+                if (card.Tapped == false)
+                {
+                    CardBack back = new CardBack();
+                }
             }
             Shuffle();
         }
@@ -30,12 +32,7 @@ namespace mtg_lite.Models.Zones
             return cards;
         }
 
-        public override void i()
-        {
-            RemoveCard(cards.Last());
-
-            //this.RemoveCard(cards.First());
-        }
+        public override Card TopCard => base.TopCard;
 
         public override Card TopCard
         {
@@ -52,6 +49,15 @@ namespace mtg_lite.Models.Zones
         public override string ToString()
         {
             return $"{"Library"} ({cards.Count})";
+        }
+
+        public override void Cardclick(Card card)
+        {
+            if (cards.Count == 0)
+            {
+                return;
+            }
+            RemoveCard(cards.Last());
         }
     }
 }

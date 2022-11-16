@@ -51,5 +51,10 @@ namespace mtg_lite.Views.UserControls.CardDisplays
         {
             CardClicked?.Invoke(this, card);
         }
+
+        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

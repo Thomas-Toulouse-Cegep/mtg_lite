@@ -38,6 +38,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         {
             if (battlefield is null) { return; }
             grpBattlefield.Text = battlefield.ToString();
+            creaturesDisplay.Cards = battlefield.Cards;
         }
 
         private void BattlefieldUnsubscribe()
@@ -71,7 +72,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void creaturesDisplay_Load(object sender, EventArgs e)
         {
+        }
 
+        private void landsDisplay_Load(object sender, EventArgs e)
+        {
         }
     }
 }

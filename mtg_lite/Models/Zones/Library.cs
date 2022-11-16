@@ -32,8 +32,6 @@ namespace mtg_lite.Models.Zones
             return cards;
         }
 
-        public override Card TopCard => base.TopCard;
-
         public override Card TopCard
         {
             get

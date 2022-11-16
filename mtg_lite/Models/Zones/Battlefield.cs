@@ -12,11 +12,12 @@ namespace mtg_lite.Models.Zones
     {
         public Battlefield(List<Card> cards, Player player) : base(cards, player)
         {
+            cards = cards.ToList();
         }
 
         public override void Cardclick(Card card)
         {
-            throw new NotImplementedException();
+            RemoveCard(cards.Last());
         }
 
         public override string ToString()

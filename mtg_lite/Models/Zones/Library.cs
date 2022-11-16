@@ -16,13 +16,7 @@ namespace mtg_lite.Models.Zones
         public Library(List<Card> cards, Player player) : base(cards, player)
         {
             cards = cards.ToList();
-            foreach (Card card in cards)
-            {
-                if (card.Tapped == false)
-                {
-                    CardBack back = new CardBack();
-                }
-            }
+
             Shuffle();
         }
 

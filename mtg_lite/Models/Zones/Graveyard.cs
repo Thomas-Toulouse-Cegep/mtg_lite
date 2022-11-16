@@ -12,6 +12,7 @@ namespace mtg_lite.Models.Zones
     {
         public Graveyard(List<Card> cards, Player player) : base(cards, player)
         {
+            cards = cards.ToList();
         }
 
         public override void Cardclick(Card card)

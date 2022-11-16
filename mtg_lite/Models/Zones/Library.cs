@@ -34,6 +34,18 @@ namespace mtg_lite.Models.Zones
 
         public override Card TopCard => base.TopCard;
 
+        public override Card TopCard
+        {
+            get
+            {
+                if (cards.Count == 0)
+                {
+                    return new DarkCardBack();
+                }
+                return new CardBack();
+            }
+        }
+
         public override string ToString()
         {
             return $"{"Library"} ({cards.Count})";

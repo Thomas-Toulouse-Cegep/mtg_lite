@@ -10,16 +10,23 @@ namespace mtg_lite.Models.Zones
 {
     internal class Hand : Zone
     {
+        private static Dictionary<string, List<Card>> libraries = new Dictionary<string, List<Card>>();
+
         public Hand(List<Card> cards, Player player) : base(cards, player)
         {
+            cards = cards.ToList();
             // player.Hand.AddCard(cards);
             /*CardAdded?.Invoke(this, card);
             CardsChanged?.Invoke(this, cards); */
         }
 
-        public List<Card> AddCard()
+        public override void AJoutCard()
         {
-            return cards;
+            if (cards.Count == 0)
+            {
+                return;
+            }
+            RemoveCard(cards.Last());
         }
 
         public override string ToString()

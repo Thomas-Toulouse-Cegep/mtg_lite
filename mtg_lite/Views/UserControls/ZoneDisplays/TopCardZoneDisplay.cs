@@ -56,7 +56,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void cardDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
-            zone.i();
+            zone.AJoutCard();
         }
 
         private void Zone_CardAdded(object? sender, Models.Cards.Card e)

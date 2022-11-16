@@ -64,8 +64,9 @@ namespace mtg_lite.Models.Zones
             cards.RemoveAt(cards.Count - 1);
         }
 
-        public virtual void i()
+        public virtual void AJoutCard()
         {
+            MessageBox.Show(Name);
         }
 
         public override string ToString()

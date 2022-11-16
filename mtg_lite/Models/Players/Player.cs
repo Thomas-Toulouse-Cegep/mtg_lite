@@ -28,7 +28,7 @@ namespace mtg_lite.Models.Players
             manaPool = new Mana();
             battlefield = new Battlefield(new List<Card>(), this);
             graveyard = new Graveyard(new List<Card>(), this);
-            hand = new Hand(new List<Card>(), this);
+            hand = new Hand(HandManager.GetCards(libraryName), this);
             this.library = new Library(LibraryManager.GetCards(libraryName), this);
             Subscribe();
         }
@@ -36,6 +36,12 @@ namespace mtg_lite.Models.Players
         public void Subscribe()
         {
             library.CardRemoved += Library_CardRemoved;
+            hand.CardRemoved += Hand_CardRemoved;
+        }
+
+        private void Hand_CardRemoved(object? sender, Card card)
+        {
+            battlefield.AddCard(card);
         }
 
         private void Library_CardRemoved(object? sender, Cards.Card card)

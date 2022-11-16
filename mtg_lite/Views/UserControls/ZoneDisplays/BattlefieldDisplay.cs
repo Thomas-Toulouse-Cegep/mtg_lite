@@ -1,4 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Cards.Permanent;
 using mtg_lite.Models.Zones;
 using mtg_lite.Views.UserControls.CardDisplays;
 using System;
@@ -58,6 +59,19 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void cardsDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
+            try
+            {
+                battlefield.Cardclick(card);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("penis");
+            }
+        }
+
+        private void creaturesDisplay_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

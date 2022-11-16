@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards.Permanent
 {
-    internal class Creatures : Card
+    internal class Creatures : Permanents
     {
         public Creatures(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
         {

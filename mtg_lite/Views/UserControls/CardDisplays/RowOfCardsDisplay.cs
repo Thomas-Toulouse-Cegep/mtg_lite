@@ -32,7 +32,7 @@ namespace mtg_lite.Views.UserControls.CardDisplays
 
         private void InitCards()
         {
-            if(cards is null) { return; }
+            if (cards is null) { return; }
             flowLayoutPanel.Controls.Clear();
             foreach (var card in cards)
             {
@@ -54,7 +54,6 @@ namespace mtg_lite.Views.UserControls.CardDisplays
 
         private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

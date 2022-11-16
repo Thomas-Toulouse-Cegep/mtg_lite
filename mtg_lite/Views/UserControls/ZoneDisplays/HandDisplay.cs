@@ -56,7 +56,14 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void rowOfCardsDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
-            hand.Cardclick(card);
+            try
+            {
+                hand.Cardclick(card);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("penis");
+            }
         }
 
         private void rowOfCardsDisplay_Load(object sender, EventArgs e)

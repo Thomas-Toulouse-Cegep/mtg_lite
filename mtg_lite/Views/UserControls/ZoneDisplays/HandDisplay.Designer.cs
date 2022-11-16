@@ -37,9 +37,9 @@
             // 
             this.grpHand.Controls.Add(this.rowOfCardsDisplay);
             this.grpHand.Location = new System.Drawing.Point(2, 2);
-            this.grpHand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHand.Margin = new System.Windows.Forms.Padding(2);
             this.grpHand.Name = "grpHand";
-            this.grpHand.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpHand.Padding = new System.Windows.Forms.Padding(2);
             this.grpHand.Size = new System.Drawing.Size(1295, 266);
             this.grpHand.TabIndex = 1;
             this.grpHand.TabStop = false;
@@ -49,8 +49,8 @@
             // 
             this.rowOfCardsDisplay.BackColor = System.Drawing.SystemColors.Control;
             this.rowOfCardsDisplay.Cards = null;
-            this.rowOfCardsDisplay.Location = new System.Drawing.Point(6, 18);
-            this.rowOfCardsDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rowOfCardsDisplay.Location = new System.Drawing.Point(4, 24);
+            this.rowOfCardsDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.rowOfCardsDisplay.Name = "rowOfCardsDisplay";
             this.rowOfCardsDisplay.Size = new System.Drawing.Size(1280, 240);
             this.rowOfCardsDisplay.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpHand);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HandDisplay";
             this.Size = new System.Drawing.Size(1305, 275);
             this.grpHand.ResumeLayout(false);

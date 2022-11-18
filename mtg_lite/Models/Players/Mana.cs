@@ -56,6 +56,17 @@ namespace MTGO_lite.Models.Manas
 
         public void Pay(Mana manaToPay)
         {
+            if (payable(manaToPay))
+            {
+                foreach (var manaColor in manaToPay.manaColors)
+                {
+                    manaColors[manaColor.Key].Remove(manaColor.Value);
+                }
+            }
+            else
+            {
+                throw new Exception("non payable");
+            }            
         }
 
         public void Add(Mana mana)
@@ -64,6 +75,22 @@ namespace MTGO_lite.Models.Manas
             {
                 manaColors[manaColor.Key].Add(manaColor.Value);
             }
+        }
+
+        public bool payable(Mana manaToPay)
+        {
+            foreach (var manaColor in manaToPay.manaColors)
+            {
+                if (manaColor.Key == ManaColorless.Name)
+                {
+                    continue;
+                }
+                if (manaColors[manaColor.Key] < manaColor.Value)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

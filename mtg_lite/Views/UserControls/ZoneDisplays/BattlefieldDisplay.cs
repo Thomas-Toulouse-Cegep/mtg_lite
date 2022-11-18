@@ -1,5 +1,6 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Cards.Permanent;
+using mtg_lite.Models.Players;
 using mtg_lite.Models.Zones;
 using mtg_lite.Views.UserControls.CardDisplays;
 using System;

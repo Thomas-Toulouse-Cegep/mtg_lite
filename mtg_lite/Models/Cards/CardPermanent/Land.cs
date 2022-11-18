@@ -17,31 +17,30 @@ namespace mtg_lite.Models.Cards.Permanent
         {
             Card CardType = null;
 
-            if (Type.ToLower().Equals("forest"))
+            switch (Type)
             {
-                Mana manaForest = new Mana(0, 0, 1, 0, 0, 0);
-                CardType = new Land("forest", "Land", manaForest, Resource.forest);
+                case "forest":
+                    Mana manaForest = new Mana(0, 0, 1, 0, 0, 0);
+                    CardType = new Land("forest", "Land", manaForest, Resource.forest);
+                    break;
+                case "island":
+                    Mana manaIsland = new Mana(0, 1, 0, 0, 0, 0);
+                    CardType = new Land("island", "Land", manaIsland, Resource.island);
+                    break;
+                case "mountain":
+                    Mana manaMountain = new Mana(0, 0, 0, 1, 0, 0);
+                    CardType = new Land("mountain", "Land", manaMountain, Resource.mountain);
+                    break;
+                case "swamp":
+                    Mana manaSwamp = new Mana(1, 0, 0, 0, 0, 0);
+                    CardType = new Land("swamp", "Land", manaSwamp, Resource.swamp);
+                    break;
+                case "plains":
+                    Mana manaPlains = new Mana(0, 0, 0, 0, 1, 0);
+                    CardType = new Land("plains", "Land", manaPlains, Resource.plains);
+                    break;
             }
-            else if (Type.ToLower().Equals("island"))
-            {
-                Mana manaIsland = new Mana(0, 1, 0, 0, 0, 0);
-                CardType = new Land("island", "Land", manaIsland, Resource.island);
-            }
-            else if (Type.ToLower().Equals("mountain"))
-            {
-                Mana manaMountain = new Mana(0, 0, 0, 1, 0, 0);
-                CardType = new Land("mountain", "Land", manaMountain, Resource.mountain);
-            }
-            else if (Type.ToLower().Equals("swamp"))
-            {
-                Mana manaSwamp = new Mana(1, 0, 0, 0, 0, 0);
-                CardType = new Land("swamp", "Land", manaSwamp, Resource.swamp);
-            }
-            else if (Type.ToLower().Equals("plains"))
-            {
-                Mana manaPlains = new Mana(0, 0, 0, 0, 1, 0);
-                CardType = new Land("plains", "Land", manaPlains, Resource.plains);
-            }
+
             return CardType;
         }
     }

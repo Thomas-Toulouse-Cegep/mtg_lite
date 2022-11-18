@@ -1,5 +1,6 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Players;
+using MTGO_lite.Models.Manas;
 using System;
 using System.Collections.Generic;
 using System.Linq;

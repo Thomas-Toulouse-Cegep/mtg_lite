@@ -1,4 +1,5 @@
-﻿using MTGO_lite.Models.Manas;
+﻿using mtg_lite.Models.Cards.Permanent;
+using MTGO_lite.Models.Manas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,22 @@ namespace mtg_lite.Models.Cards
         {
             Card CardType = null;
 
-            if (Type.ToLower().Equals("blightning"))
+            switch (Type)
             {
-                Mana manaBlightning = new Mana(1, 0, 0, 1, 1, 1);
-                CardType = new Sorcery("blightning", "Sorcery", manaBlightning, Resource.blightning);
+                case "blightning":
+                    Mana manaBlightning = new Mana(1, 0, 0, 1, 1, 1);
+                    CardType = new Sorcery("blightning", "Sorcery", manaBlightning, Resource.blightning);
+                    break;
+                case "chain_lightning":
+                    Mana manaChainLightning = new Mana(0, 0, 0, 1, 0, 0);
+                    CardType = new Sorcery("chain_lightning", "Sorcery", manaChainLightning, Resource.chain_lightning);
+                    break;
+                case "clone_legion":
+                    Mana manaCloneLegion = new Mana(0, 2, 0, 0, 0, 7);
+                    CardType = new Sorcery("clone_legion", "Sorcery", manaCloneLegion, Resource.clone_legion);
+                    break;
             }
-            else if (Type.ToLower().Equals("chain_lightning"))
-            {
-                Mana manaChainLightning = new Mana(0, 0, 0, 1, 0, 0);
-                CardType = new Sorcery("chain_lightning", "Sorcery", manaChainLightning, Resource.chain_lightning);
-            }
-            else if (Type.ToLower().Equals("clone_legion"))
-            {
-                Mana manaCloneLegion = new Mana(0, 2, 0, 0, 0, 7);
-                CardType = new Sorcery("clone_legion", "Sorcery", manaCloneLegion, Resource.clone_legion);
-            }
+
             return CardType;
         }
     }

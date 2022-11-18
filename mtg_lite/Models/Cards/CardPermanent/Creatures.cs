@@ -17,21 +17,22 @@ namespace mtg_lite.Models.Cards.Permanent
         {
             Card CardType = null;
 
-            if (Type.ToLower().Equals("alpha_myr"))
+            switch (Type)
             {
-                Mana manaAlphaMyr = new Mana(0, 0, 0, 0, 0, 2);
-                CardType = new Creatures("alpha_myr", "Creatures", manaAlphaMyr, Resource.alpha_myr);
+                case "alpha_myr":
+                    Mana manaAlphaMyr = new Mana(0, 0, 0, 0, 0, 2);
+                    CardType = new Creatures("alpha_myr", "Creatures", manaAlphaMyr, Resource.alpha_myr);
+                    break;
+                case "barony_vampire":
+                    Mana manaBaronyVampire = new Mana(1, 0, 0, 0, 0, 2);
+                    CardType = new Creatures("barony_vampire", "Creatures", manaBaronyVampire, Resource.barony_vampire);
+                    break;
+                case "fusion_elemental":
+                    Mana manaFusionElemental = new Mana(1, 1, 1, 1, 1, 0);
+                    CardType = new Creatures("fusion_elemental", "Creatures", manaFusionElemental, Resource.fusion_elemental);
+                    break;
             }
-            else if (Type.ToLower().Equals("barony_vampire"))
-            {
-                Mana manaBaronyVampire = new Mana(1, 0, 0, 0, 0, 2);
-                CardType = new Creatures("barony_vampire", "Creatures", manaBaronyVampire, Resource.barony_vampire);
-            }
-            else if (Type.ToLower().Equals("fusion_elemental"))
-            {
-                Mana manaFusionElemental = new Mana(1, 1, 1, 1, 1, 0);
-                CardType = new Creatures("fusion_elemental", "Creatures", manaFusionElemental, Resource.fusion_elemental);
-            }
+
             return CardType;
         }
     }

@@ -72,9 +72,9 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
                     hand.Cardclick(card);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("penis");
+                MessageBox.Show(e.Message);
             }
         }
 

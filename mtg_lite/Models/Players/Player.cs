@@ -18,13 +18,13 @@ namespace mtg_lite.Models.Players
         Mana testMana = new Mana(10, 10, 10, 10, 10, 0);
 
         private Mana manaPool;
-        private Zone battlefield;
+        private Battlefield battlefield;
         private Zone graveyard;
         private Zone hand;
         private Zone library;
 
         public Mana ManaPool { get => manaPool; }
-        public Zone Battlefield { get => battlefield; }
+        public Battlefield Battlefield { get => battlefield; }
         public Zone Graveyard { get => graveyard; }
         public Zone Hand { get => hand; }
         public Zone Library { get => library; }
@@ -48,6 +48,10 @@ namespace mtg_lite.Models.Players
         private void Hand_CardRemoved(object? sender, Card card)
         {
             PlayCard(card);
+            if (card.Type == "Sorcery")
+            {
+                graveyard.AddCard(card);
+            }
             battlefield.AddCard(card);
         }
 

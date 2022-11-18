@@ -15,7 +15,7 @@ namespace mtg_lite.Models.Players
     public class Player
     {
         //pool de mana pour les tests
-        Mana testMana = new Mana(10, 10, 10, 10, 10, 0);
+        Mana testMana = new Mana(10, 10, 10, 10, 10, 10);
 
         private Mana manaPool;
         private Battlefield battlefield;
@@ -62,7 +62,7 @@ namespace mtg_lite.Models.Players
 
         public void PlayCard(Card card)
         {
-            //Les pool de mana pour les test se trouve en debut code
+            //La pool de mana pour les test se trouve en debut code
 
             if (card.Tapped)
             {
@@ -81,48 +81,19 @@ namespace mtg_lite.Models.Players
             }
             else
             {
-                //dit si la carte est Tapped
-                MessageBox.Show("Is not tapped."); 
-                //Fait une action en fonction du type de la carte
                 switch (card.Type)
                 {
-                    //Creatures
-                    case "Creatures":
-                        //action pour Creature                        
-                        manaPool.Pay(card.ManaCost);                        
-                        //verification action
-                        MessageBox.Show(testMana.Black.ToString());
-                        MessageBox.Show(testMana.Blue.ToString());
-                        MessageBox.Show(testMana.Colorless.ToString());
-                        MessageBox.Show(testMana.Green.ToString());
-                        MessageBox.Show(testMana.Red.ToString());
-                        MessageBox.Show(testMana.White.ToString());
-                        //dit le type
-                        MessageBox.Show("Is Creature."); 
+                    case "Creatures":                       
+                        manaPool.Pay(card.ManaCost);
                         break;
-                    //Land
                     case "Land":
-                        //action pour Land
-                        testMana.Add(card.ManaCost);
-                        //verification action
-                        MessageBox.Show(testMana.Black.ToString());
-                        MessageBox.Show(testMana.Blue.ToString());
-                        MessageBox.Show(testMana.Colorless.ToString());
-                        MessageBox.Show(testMana.Green.ToString());
-                        MessageBox.Show(testMana.Red.ToString());
-                        MessageBox.Show(testMana.White.ToString());
-                        //dit le type
-                        MessageBox.Show("Is Land.");
+                        manaPool.Add(card.ManaCost);
                         break;
-                    //Sorcery
-                    case "Sorery":
-                        //dit le type
-                        MessageBox.Show("Is Sorcery.");
+                    case "Sorcery":
+                        manaPool.Pay(card.ManaCost);
                         break;
                 }
             }
-
-            MessageBox.Show(card.Name); //test message
         }
     }
 }

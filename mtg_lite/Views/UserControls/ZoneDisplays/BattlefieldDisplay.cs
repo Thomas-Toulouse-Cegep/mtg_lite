@@ -62,11 +62,14 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         {
             try
             {
-                battlefield.Cardclick(card);
+                if (card.GetType().ToString() == "Creatures")
+                {
+                    battlefield.Cardclick(card);
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("penis");
+                MessageBox.Show("i");
             }
         }
 

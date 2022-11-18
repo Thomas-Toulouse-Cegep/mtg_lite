@@ -9,7 +9,7 @@ namespace mtg_lite.Models.Cards.Permanent
 {
     internal class Land : Permanents
     {
-        public Land(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public Land(string name, string type, Mana manaCost, Bitmap picture) : base(name, type, manaCost, picture)
         {
         }
 
@@ -20,27 +20,27 @@ namespace mtg_lite.Models.Cards.Permanent
             if (Type.ToLower().Equals("forest"))
             {
                 Mana manaForest = new Mana(0, 0, 1, 0, 0, 0);
-                CardType = new Land("forest", manaForest, Resource.forest);
+                CardType = new Land("forest", "Land", manaForest, Resource.forest);
             }
             else if (Type.ToLower().Equals("island"))
             {
                 Mana manaIsland = new Mana(0, 1, 0, 0, 0, 0);
-                CardType = new Land("island", manaIsland, Resource.island);
+                CardType = new Land("island", "Land", manaIsland, Resource.island);
             }
             else if (Type.ToLower().Equals("mountain"))
             {
                 Mana manaMountain = new Mana(0, 0, 0, 1, 0, 0);
-                CardType = new Land("mountain", manaMountain, Resource.mountain);
+                CardType = new Land("mountain", "Land", manaMountain, Resource.mountain);
             }
             else if (Type.ToLower().Equals("swamp"))
             {
                 Mana manaSwamp = new Mana(1, 0, 0, 0, 0, 0);
-                CardType = new Land("swamp", manaSwamp, Resource.swamp);
+                CardType = new Land("swamp", "Land", manaSwamp, Resource.swamp);
             }
             else if (Type.ToLower().Equals("plains"))
             {
                 Mana manaPlains = new Mana(0, 0, 0, 0, 1, 0);
-                CardType = new Land("plains", manaPlains, Resource.plains);
+                CardType = new Land("plains", "Land", manaPlains, Resource.plains);
             }
             return CardType;
         }

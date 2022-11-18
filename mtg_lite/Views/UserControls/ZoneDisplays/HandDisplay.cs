@@ -59,7 +59,18 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         {
             try
             {
-                hand.Cardclick(card);
+                if (card.Type.ToString() == "Creatures")
+                {
+                    hand.Cardclick(card);
+                }
+                else if (card.Type.ToString() == "Land")
+                {
+                    hand.Cardclick(card);
+                }
+                else
+                {
+                    hand.Cardclick(card);
+                }
             }
             catch (Exception)
             {

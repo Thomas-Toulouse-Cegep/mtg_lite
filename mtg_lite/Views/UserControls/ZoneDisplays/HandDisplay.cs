@@ -74,7 +74,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             }
             catch (Exception)
             {
-                MessageBox.Show("penis");
+                MessageBox.Show("ah");
             }
         }
 

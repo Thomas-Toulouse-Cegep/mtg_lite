@@ -12,13 +12,13 @@ namespace mtg_lite.Models.Players
     public class Player
     {
         private Mana manaPool;
-        private Zone battlefield;
+        private Battlefield battlefield;
         private Zone graveyard;
         private Zone hand;
         private Zone library;
 
         public Mana ManaPool { get => manaPool; }
-        public Zone Battlefield { get => battlefield; }
+        public Battlefield Battlefield { get => battlefield; }
         public Zone Graveyard { get => graveyard; }
         public Zone Hand { get => hand; }
         public Zone Library { get => library; }

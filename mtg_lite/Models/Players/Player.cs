@@ -68,14 +68,13 @@ namespace mtg_lite.Models.Players
             }
             else
             {
-
                 MessageBox.Show("Is not tapped."); //test message
 
                 if (card.GetType().ToString() == "Creatures")
                 {
                     MessageBox.Show("Is Creature."); //test message
                 }
-                else if (card.GetType().ToString() == "Land")  
+                else if (card.GetType().ToString() == "Land")
                 {
                     MessageBox.Show("Is Land."); //test message
                 }

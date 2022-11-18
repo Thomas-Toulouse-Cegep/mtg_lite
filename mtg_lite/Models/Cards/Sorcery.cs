@@ -11,7 +11,7 @@ namespace mtg_lite.Models.Cards
     {
         private bool isPermanent1 = false;
 
-        public Sorcery(string name, Mana manaCost, Bitmap picture) : base(name, manaCost, picture)
+        public Sorcery(string name, string type, Mana manaCost, Bitmap picture) : base(name, type, manaCost, picture)
         {
         }
 
@@ -24,17 +24,17 @@ namespace mtg_lite.Models.Cards
             if (Type.ToLower().Equals("blightning"))
             {
                 Mana manaBlightning = new Mana(1, 0, 0, 1, 1, 1);
-                CardType = new Sorcery("blightning", manaBlightning, Resource.blightning);
+                CardType = new Sorcery("blightning", "Sorcery", manaBlightning, Resource.blightning);
             }
             else if (Type.ToLower().Equals("chain_lightning"))
             {
                 Mana manaChainLightning = new Mana(0, 0, 0, 1, 0, 0);
-                CardType = new Sorcery("chain_lightning", manaChainLightning, Resource.chain_lightning);
+                CardType = new Sorcery("chain_lightning", "Sorcery", manaChainLightning, Resource.chain_lightning);
             }
             else if (Type.ToLower().Equals("clone_legion"))
             {
                 Mana manaCloneLegion = new Mana(0, 2, 0, 0, 0, 7);
-                CardType = new Sorcery("clone_legion", manaCloneLegion, Resource.clone_legion);
+                CardType = new Sorcery("clone_legion", "Sorcery", manaCloneLegion, Resource.clone_legion);
             }
             return CardType;
         }

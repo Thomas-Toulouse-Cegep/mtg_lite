@@ -42,6 +42,10 @@ namespace mtg_lite.Models.Players
         private void Hand_CardRemoved(object? sender, Card card)
         {
             PlayCard(card);
+            if (card.Type == "Sorcery")
+            {
+                graveyard.AddCard(card);
+            }
             battlefield.AddCard(card);
         }
 

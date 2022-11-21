@@ -67,7 +67,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
                 battlefield.Cardclick(card);
                 if (card.Tapped == false)
                 {
-                    card.Picture.RotateFlip(RotateFlipType.Rotate90FlipXY);
+                    card.Picture.RotateFlip(RotateFlipType.Rotate90FlipX);
 
                     DisplayBattlefield();
                 }

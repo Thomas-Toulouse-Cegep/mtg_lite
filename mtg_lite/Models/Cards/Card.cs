@@ -1,11 +1,5 @@
 ﻿using MTGO_lite.Models.Manas;
-using MTGO_lite.Models.Manas.ManaColors;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards
 {
@@ -40,7 +34,6 @@ namespace mtg_lite.Models.Cards
 
         private void ChangeTapped(bool value)
         {
-            tapped = value;
             TappedChanged?.Invoke(this, tapped);
         }
 

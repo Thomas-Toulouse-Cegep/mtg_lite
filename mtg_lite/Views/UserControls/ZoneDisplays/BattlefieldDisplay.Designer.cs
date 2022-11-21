@@ -37,7 +37,7 @@
             // creaturesDisplay
             // 
             this.creaturesDisplay.Cards = null;
-            this.creaturesDisplay.Location = new System.Drawing.Point(0, 35);
+            this.creaturesDisplay.Location = new System.Drawing.Point(6, 48);
             this.creaturesDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.creaturesDisplay.Name = "creaturesDisplay";
             this.creaturesDisplay.Size = new System.Drawing.Size(1280, 240);

@@ -2,6 +2,7 @@
 using mtg_lite.Models.Players;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,14 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            RemoveCard(cards.Last());
+            if (card.Tapped == false)
+            {
+                card.Tapped = true;
+            }
+            else
+            {
+                card.Tapped = false;
+            }
         }
 
         public override string ToString()

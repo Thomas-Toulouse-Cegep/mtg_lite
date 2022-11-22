@@ -66,17 +66,15 @@ namespace mtg_lite.Models.Players
 
             if (card.Tapped)
             {
-                MessageBox.Show("Is tapped."); //test message
 
                 if (card.IsPermanent)
                 {
-                    MessageBox.Show("Is permanent."); //test message
 
                 }
                 else
                 {
                     //====> sorcery <====\\
-                    MessageBox.Show("Is not permanent."); //test message
+
                 }
             }
             else

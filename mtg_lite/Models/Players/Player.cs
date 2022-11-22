@@ -15,7 +15,8 @@ namespace mtg_lite.Models.Players
     public class Player
     {
         //pool de mana pour les tests
-        Mana testMana = new Mana(10, 10, 10, 10, 10, 10);
+
+        private Mana testMana = new Mana(10, 10, 10, 10, 10, 0);
 
         private Mana manaPool;
         private Battlefield battlefield;
@@ -69,7 +70,7 @@ namespace mtg_lite.Models.Players
 
                 if (card.IsPermanent)
                 {
-
+                    
                 }
                 else
                 {

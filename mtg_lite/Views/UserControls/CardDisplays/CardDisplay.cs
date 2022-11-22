@@ -47,6 +47,7 @@ namespace mtg_lite.Views.UserControls.CardDisplays
         {
             if (card is null) { return; }
             CardClicked?.Invoke(this, card);
+
         }
     }
 }

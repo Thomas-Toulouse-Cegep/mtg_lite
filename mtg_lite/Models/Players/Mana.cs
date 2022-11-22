@@ -79,12 +79,39 @@ namespace MTGO_lite.Models.Manas
 
         public bool payable(Mana manaToPay)
         {
+            int manaTotal = manaToPay.Black.Quantity +
+                            manaToPay.Blue.Quantity +
+                            manaToPay.Colorless.Quantity +
+                            manaToPay.Green.Quantity +
+                            manaToPay.Red.Quantity +
+                            manaToPay.White.Quantity;
+            int manaPool = 0;
+
             foreach (var manaColor in manaToPay.manaColors)
             {
+                manaPool += manaColors[manaColor.Key].Quantity;
+
                 if (manaColor.Key == ManaColorless.Name)
                 {
-                    continue;
-                }
+                    if (manaToPay.Colorless.Quantity == 0)
+                    {
+                        if (manaPool > 0)
+                        {
+                            if (manaPool <= manaTotal)
+                            {
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }                
                 if (manaColors[manaColor.Key] < manaColor.Value)
                 {
                     return false;

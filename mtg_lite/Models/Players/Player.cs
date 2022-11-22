@@ -66,16 +66,16 @@ namespace mtg_lite.Models.Players
 
             if (card.Tapped)
             {
-                MessageBox.Show("Is tapped."); //test message
+                //MessageBox.Show("Is tapped."); //test message
 
                 if (card.IsPermanent)
                 {
-                    MessageBox.Show("Is permanent."); //test message
+                  //  MessageBox.Show("Is permanent."); //test message
                 }
                 else
                 {
                     //====> sorcery <====\\
-                    MessageBox.Show("Is not permanent."); //test message
+                  // MessageBox.Show("Is not permanent."); //test message
                 }
             }
             else
@@ -90,38 +90,38 @@ namespace mtg_lite.Models.Players
                         //action pour Creature
                         manaPool.Pay(card.ManaCost);
                         //verification action
-                        MessageBox.Show(testMana.Black.ToString());
-                        MessageBox.Show(testMana.Blue.ToString());
-                        MessageBox.Show(testMana.Colorless.ToString());
-                        MessageBox.Show(testMana.Green.ToString());
-                        MessageBox.Show(testMana.Red.ToString());
-                        MessageBox.Show(testMana.White.ToString());
+                        /*  MessageBox.Show(testMana.Black.ToString());
+                          MessageBox.Show(testMana.Blue.ToString());
+                          MessageBox.Show(testMana.Colorless.ToString());
+                          MessageBox.Show(testMana.Green.ToString());
+                          MessageBox.Show(testMana.Red.ToString());
+                          MessageBox.Show(testMana.White.ToString());*/
                         //dit le type
-                        MessageBox.Show("Is Creature.");
+                        /*    MessageBox.Show("Is Creature.");*/
                         break;
                     //Land
                     case "Land":
                         //action pour Land
                         testMana.Add(card.ManaCost);
                         //verification action
-                        MessageBox.Show(testMana.Black.ToString());
-                        MessageBox.Show(testMana.Blue.ToString());
-                        MessageBox.Show(testMana.Colorless.ToString());
-                        MessageBox.Show(testMana.Green.ToString());
-                        MessageBox.Show(testMana.Red.ToString());
-                        MessageBox.Show(testMana.White.ToString());
+                        /*  MessageBox.Show(testMana.Black.ToString());
+                          MessageBox.Show(testMana.Blue.ToString());
+                          MessageBox.Show(testMana.Colorless.ToString());
+                          MessageBox.Show(testMana.Green.ToString());
+                          MessageBox.Show(testMana.Red.ToString());
+                          MessageBox.Show(testMana.White.ToString());*/
                         //dit le type
-                        MessageBox.Show("Is Land.");
+                        //MessageBox.Show("Is Land.");
                         break;
                     //Sorcery
                     case "Sorery":
                         //dit le type
-                        MessageBox.Show("Is Sorcery.");
+                        //   MessageBox.Show("Is Sorcery.");
                         break;
                 }
             }
 
-            MessageBox.Show(card.Name); //test message
+            // MessageBox.Show(card.Name); //test message
         }
     }
 }

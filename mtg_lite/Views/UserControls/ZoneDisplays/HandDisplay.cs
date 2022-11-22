@@ -75,7 +75,6 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-
             }
         }
 

@@ -79,10 +79,11 @@
             // 
             this.battlefieldDisplay.Battlefield = null;
             this.battlefieldDisplay.Location = new System.Drawing.Point(187, 10);
-            this.battlefieldDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.battlefieldDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.battlefieldDisplay.Name = "battlefieldDisplay";
             this.battlefieldDisplay.Size = new System.Drawing.Size(1297, 531);
             this.battlefieldDisplay.TabIndex = 5;
+            this.battlefieldDisplay.Load += new System.EventHandler(this.battlefieldDisplay_Load);
             // 
             // FormGame
             // 

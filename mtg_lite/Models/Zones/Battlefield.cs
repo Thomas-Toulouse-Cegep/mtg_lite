@@ -18,9 +18,11 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            if (card.Tapped == false)
+            if (card.Tapped)
             {
                 card.Tapped = true;
+
+                CardRotate(card);
             }
             else
             {

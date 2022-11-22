@@ -22,8 +22,12 @@ namespace mtg_lite.Models.Zones
         }
 
         public override void Cardclick(Card card)
-        {
+        {   //check if card can be play
             if (cards.Count == 0)
+            {
+                return;
+            }
+            if (player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
             {
                 return;
             }

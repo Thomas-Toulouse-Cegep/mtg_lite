@@ -1,13 +1,4 @@
 ﻿using MTGO_lite.Models.Manas.ManaColors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace mtg_lite.Views.UserControls.ManaDisplays
 {
@@ -30,7 +21,7 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
 
         private void DisplayManaColor()
         {
-            if(manaColor is null) { return; }
+            if (manaColor is null) { return; }
             picIcon.Image = manaColor.Icon;
             UpdateDisplayQuantity();
         }

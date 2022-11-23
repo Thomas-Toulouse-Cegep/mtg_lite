@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTGO_lite.Models.Manas.ManaColors;
+﻿using MTGO_lite.Models.Manas.ManaColors;
 
 namespace MTGO_lite.Models.Manas
 {
+    ///
     public class Mana
     {
         private Dictionary<string, ManaColor> manaColors;

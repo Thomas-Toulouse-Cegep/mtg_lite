@@ -1,14 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using mtg_lite.Models.Cards;
-using mtg_lite.Models.Cards.Permanent;
+﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Zones;
 using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Players
 {

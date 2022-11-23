@@ -1,11 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Cards.Permanent;
-using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
@@ -27,6 +21,10 @@ namespace mtg_lite.Models.Zones
             return new List<Card>();
         }
 
+        /// <summary>
+        /// start deck creations
+        /// </summary>
+        /// <returns>return a list for the deck</returns>
         public static List<Card> CreateList()
         {
             List<Card> list = new List<Card>();

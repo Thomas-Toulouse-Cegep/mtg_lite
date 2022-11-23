@@ -1,13 +1,4 @@
 ﻿using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace mtg_lite.Views.UserControls.ManaDisplays
 {
@@ -30,7 +21,7 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
 
         private void DisplayManaPool()
         {
-            if(manaPool is null) { return; }
+            if (manaPool is null) { return; }
             foreach (var mana in manaPool.ManaColors)
             {
                 var manaColorDisplay = new ManaColorDisplay();

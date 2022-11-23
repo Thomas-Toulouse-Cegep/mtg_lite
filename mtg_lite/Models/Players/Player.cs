@@ -1,20 +1,13 @@
-﻿using Microsoft.VisualBasic;
-using mtg_lite.Models.Cards;
-using mtg_lite.Models.Cards.Permanent;
+﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Zones;
 using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Players
 {
     public class Player
     {
         //pool de mana pour les tests
+
         private Mana testMana = new Mana(10, 10, 10, 10, 10, 0);
 
         private Mana manaPool;
@@ -23,7 +16,9 @@ namespace mtg_lite.Models.Players
         private Zone hand;
         private Zone library;
 
+        ///
         public Mana ManaPool { get => manaPool; }
+
         public Battlefield Battlefield { get => battlefield; }
         public Zone Graveyard { get => graveyard; }
         public Zone Hand { get => hand; }
@@ -60,68 +55,42 @@ namespace mtg_lite.Models.Players
             hand.AddCard(card);
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="card"> the card  the player is playing</param>
         public void PlayCard(Card card)
         {
-            //Les pool de mana pour les test se trouve en debut code
+            //La pool de mana pour les test se trouve en debut code
 
             if (card.Tapped)
             {
-                //MessageBox.Show("Is tapped."); //test message
-
                 if (card.IsPermanent)
                 {
-                  //  MessageBox.Show("Is permanent."); //test message
+
                 }
                 else
                 {
                     //====> sorcery <====\\
-                  // MessageBox.Show("Is not permanent."); //test message
                 }
             }
             else
             {
-                //dit si la carte est Tapped
-                MessageBox.Show("Is not tapped.");
-                //Fait une action en fonction du type de la carte
                 switch (card.Type)
                 {
-                    //Creatures
-                    case "Creatures":
-                        //action pour Creature
-                        manaPool.Pay(card.ManaCost);
-                        //verification action
-                        /*  MessageBox.Show(testMana.Black.ToString());
-                          MessageBox.Show(testMana.Blue.ToString());
-                          MessageBox.Show(testMana.Colorless.ToString());
-                          MessageBox.Show(testMana.Green.ToString());
-                          MessageBox.Show(testMana.Red.ToString());
-                          MessageBox.Show(testMana.White.ToString());*/
-                        //dit le type
-                        /*    MessageBox.Show("Is Creature.");*/
+                    case "Creatures":                       
+                        manaPool.Pay(card.ManaCost);r
                         break;
-                    //Land
+                        
                     case "Land":
-                        //action pour Land
-                        testMana.Add(card.ManaCost);
-                        //verification action
-                        /*  MessageBox.Show(testMana.Black.ToString());
-                          MessageBox.Show(testMana.Blue.ToString());
-                          MessageBox.Show(testMana.Colorless.ToString());
-                          MessageBox.Show(testMana.Green.ToString());
-                          MessageBox.Show(testMana.Red.ToString());
-                          MessageBox.Show(testMana.White.ToString());*/
-                        //dit le type
-                        //MessageBox.Show("Is Land.");
+                        manaPool.Add(card.ManaCost);
                         break;
-                    //Sorcery
-                    case "Sorery":
-                        //dit le type
-                        //   MessageBox.Show("Is Sorcery.");
+                        
+                    case "Sorcery":
+                        manaPool.Pay(card.ManaCost);
                         break;
                 }
             }
-
-            // MessageBox.Show(card.Name); //test message
         }
     }
 }

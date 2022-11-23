@@ -1,11 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Players;
-using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
@@ -29,6 +23,11 @@ namespace mtg_lite.Models.Zones
             {
                 card.Tapped = false;
             }
+        }
+
+        private void Card_TappedChanged(object? sender, bool tapped)
+        {
+            tapped = true;
         }
 
         public override string ToString()

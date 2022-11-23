@@ -1,10 +1,4 @@
 ﻿using mtg_lite.Models.Players;
-using mtg_lite.Models.Zones;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Controllers
 {

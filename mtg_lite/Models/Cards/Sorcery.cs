@@ -1,10 +1,4 @@
-﻿using mtg_lite.Models.Cards.Permanent;
-using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MTGO_lite.Models.Manas;
 
 namespace mtg_lite.Models.Cards
 {
@@ -25,6 +19,11 @@ namespace mtg_lite.Models.Cards
 
         public bool IsPermanent1 { get => isPermanent1; }
 
+        /// <summary>
+        /// create card (Sorcery)
+        /// </summary>
+        /// <param name="Type">determine card type</param>
+        /// <returns>return  the card type</returns>
         public static Card SorceryFactory(string Type)
         {
             Card CardType = null;

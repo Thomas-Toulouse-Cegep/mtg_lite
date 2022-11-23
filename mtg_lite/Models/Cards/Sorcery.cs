@@ -24,7 +24,7 @@ namespace mtg_lite.Models.Cards
             switch (Type)
             {
                 case "blightning":
-                    Mana manaBlightning = new Mana(1, 0, 0, 1, 1, 1);
+                    Mana manaBlightning = new Mana(1, 0, 0, 1, 0, 1);
                     CardType = new Sorcery("blightning", "Sorcery", manaBlightning, Resource.blightning);
                     break;
 

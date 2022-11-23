@@ -18,6 +18,7 @@ namespace mtg_lite.Views.UserControls.CardDisplays
         public CardDisplay(Card card) : this()
         {
             ChangeCard(card);
+            card.TappedChanged += Card_TappedChanged;
         }
 
         private void ChangeCard(Card? newCard)
@@ -25,17 +26,18 @@ namespace mtg_lite.Views.UserControls.CardDisplays
             card = newCard;
 
             InitDisplay();
-            
         }
 
         private void Card_TappedChanged(object? sender, bool e)
         {
             sender = card.Picture;
-            card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            // sender.ToString();
+            //card.Picture.Dispose();
+            //card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
             // card.Picture = sender;
-            // card.Picture.Dispose();
+
             //object? value = card.Tapped;
-            //  card.Tapped = e;
+            //card.Picture = e;
             //card.Picture = card.Picture;
             //card.Picture = card.Picture;
         }
@@ -45,14 +47,13 @@ namespace mtg_lite.Views.UserControls.CardDisplays
             if (card is null) { return; }
             var image = new Bitmap(card.Picture);
             picCard.Image = image;
-            card.TappedChanged += Card_TappedChanged;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (card is null) { return; }
             CardClicked?.Invoke(this, card);
-            //card.TappedChanged += Card_TappedChanged;
+            ChangeCard(card);
         }
     }
 }

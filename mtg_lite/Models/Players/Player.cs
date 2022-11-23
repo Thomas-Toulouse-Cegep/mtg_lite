@@ -7,7 +7,6 @@ namespace mtg_lite.Models.Players
     public class Player
     {
         //pool de mana pour les tests
-
         private Mana testMana = new Mana(10, 10, 10, 10, 10, 0);
 
         private Mana manaPool;
@@ -79,7 +78,7 @@ namespace mtg_lite.Models.Players
                 switch (card.Type)
                 {
                     case "Creatures":                       
-                        manaPool.Pay(card.ManaCost);r
+                        manaPool.Pay(card.ManaCost);
                         break;
                         
                     case "Land":

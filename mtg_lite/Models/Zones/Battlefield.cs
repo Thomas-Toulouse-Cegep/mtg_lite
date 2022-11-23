@@ -18,11 +18,12 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            if (card.Tapped)
+            if (!card.Tapped)
             {
                 card.Tapped = true;
 
-                CardRotate(card);
+                CardRotate(card); // rotate the card situated in Zone.cs
+                player.PlayCard(card); // do things with mana value
             }
             else
             {

@@ -68,7 +68,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             }
             catch (Exception)
             {
-                MessageBox.Show("i");
+                MessageBox.Show("Card can't be play");
             }
         }
 

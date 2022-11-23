@@ -35,28 +35,33 @@
             // 
             // flowLayoutPanel
             // 
-            this.flowLayoutPanel.Location = new System.Drawing.Point(6, 30);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 24);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(195, 297);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(156, 238);
             this.flowLayoutPanel.TabIndex = 0;
+            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
             // 
             // grpManaPool
             // 
             this.grpManaPool.Controls.Add(this.flowLayoutPanel);
             this.grpManaPool.Location = new System.Drawing.Point(0, 0);
+            this.grpManaPool.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpManaPool.Name = "grpManaPool";
-            this.grpManaPool.Size = new System.Drawing.Size(206, 333);
+            this.grpManaPool.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpManaPool.Size = new System.Drawing.Size(165, 266);
             this.grpManaPool.TabIndex = 1;
             this.grpManaPool.TabStop = false;
             this.grpManaPool.Text = "Mana pool";
             // 
             // ManaPoolDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpManaPool);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManaPoolDisplay";
-            this.Size = new System.Drawing.Size(333, 429);
+            this.Size = new System.Drawing.Size(266, 343);
             this.grpManaPool.ResumeLayout(false);
             this.ResumeLayout(false);
 

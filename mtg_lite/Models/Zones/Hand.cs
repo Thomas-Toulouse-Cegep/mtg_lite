@@ -16,9 +16,6 @@ namespace mtg_lite.Models.Zones
         public Hand(List<Card> cards, Player player) : base(cards, player)
         {
             cards = cards.ToList();
-            // player.Hand.AddCard(cards);
-            /*CardAdded?.Invoke(this, card);
-            CardsChanged?.Invoke(this, cards); */
         }
 
         public override void Cardclick(Card card)
@@ -26,6 +23,10 @@ namespace mtg_lite.Models.Zones
             if (cards.Count == 0)
             {
                 return;
+            }
+            if (card.Type =="Land")
+            {
+                RemoveCard(card);
             }
             if (player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
             {

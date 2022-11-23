@@ -30,7 +30,7 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
 
         private void DisplayManaColor()
         {
-            if(manaColor is null) { return; }
+            if (manaColor is null) { return; }
             picIcon.Image = manaColor.Icon;
             UpdateDisplayQuantity();
         }
@@ -39,6 +39,10 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
         {
             if (manaColor is null) { return; }
             lblQuantity.Text = manaColor.Quantity.ToString();
+        }
+
+        private void lblQuantity_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -22,6 +22,13 @@ namespace mtg_lite.Models.Cards
 
         public event EventHandler<bool>? TappedChanged;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="name">Nom de la carte</param>
+        /// <param name="type">Type de la carte</param>
+        /// <param name="manaCost">Le coût de la carte</param>
+        /// <param name="picture">L'image de la carte qui est situé dans le fichier Ressource</param>
         public Card(string name, string type, Mana manaCost, Bitmap picture)
         {
             this.name = name;
@@ -32,6 +39,10 @@ namespace mtg_lite.Models.Cards
             guid = Guid.NewGuid();
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="value">verifie si la carte est tapped (true) ou elle ne l'est pas(false) (</param>
         private void ChangeTapped(bool value)
         {
             TappedChanged?.Invoke(this, tapped);

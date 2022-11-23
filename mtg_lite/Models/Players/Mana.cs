@@ -166,7 +166,7 @@ namespace MTGO_lite.Models.Manas
                     {
                         continue;
                     }
-                }                
+                }
                 if (manaColors[manaColor.Key] < manaColor.Value)
                 {
                     throw new Exception("Vous n'avez pas assez de mana pour jouer cette carte.");

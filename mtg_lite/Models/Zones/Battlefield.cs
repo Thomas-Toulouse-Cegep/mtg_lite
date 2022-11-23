@@ -1,5 +1,6 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Players;
+using MTGO_lite.Models.Manas;
 
 namespace mtg_lite.Models.Zones
 {
@@ -12,19 +13,12 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            //player.Battlefield.CardRotate(card);
-            //card.Tapped = true;
-            card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
-            card.ChangeTapped(!card.Tapped);
-
-            // CardRotate(card); // rotate the card situated in Zone.cs
-            // card.TappedChanged += Card_TappedChanged;
-            // player.PlayCard(card); // do things with mana value
-        }
-
-        public static void Card_TappedChanged(object? card, bool cardTapped)
-        {
-            // card.Tapped = cardTapped;
+            if (card.Type == "Land")
+            {
+                card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                card.ChangeTapped(!card.Tapped);
+                player.ManaPool.Add(card.ManaCost);
+            }
         }
 
         public override string ToString()

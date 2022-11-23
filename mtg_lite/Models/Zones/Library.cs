@@ -54,7 +54,7 @@ namespace mtg_lite.Models.Zones
         {
             if (cards.Count == 0)
             {
-                return;
+                throw new Exception("Il ne reste plus de cartes dans la library.");
             }
             RemoveCard(cards.Last());
         }

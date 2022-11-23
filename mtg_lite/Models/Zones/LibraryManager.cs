@@ -28,7 +28,7 @@ namespace mtg_lite.Models.Zones
         }
 
         /// <summary>
-        ///
+        /// start deck creations
         /// </summary>
         /// <returns>return a list for the deck</returns>
         public static List<Card> CreateList()

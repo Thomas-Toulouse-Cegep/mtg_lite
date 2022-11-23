@@ -1,9 +1,6 @@
 <a name='assembly'></a>
 # mtg_lite
 
-## Dépendances
-<a href="https://github.com/lijunle/Vsxmd">Vsxmd</a>
-
 ## Contents
 
 - [ApplicationConfiguration](#T-mtg_lite-ApplicationConfiguration 'mtg_lite.ApplicationConfiguration')
@@ -14,10 +11,15 @@
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-ZoneDisplays-BattlefieldDisplay-InitializeComponent 'mtg_lite.Views.UserControls.ZoneDisplays.BattlefieldDisplay.InitializeComponent')
 - [BattlefieldManager](#T-mtg_lite-Models-Zones-BattlefieldManager 'mtg_lite.Models.Zones.BattlefieldManager')
   - [GetCards(handsName)](#M-mtg_lite-Models-Zones-BattlefieldManager-GetCards-System-String- 'mtg_lite.Models.Zones.BattlefieldManager.GetCards(System.String)')
+- [Card](#T-mtg_lite-Models-Cards-Card 'mtg_lite.Models.Cards.Card')
+  - [#ctor(name,type,manaCost,picture)](#M-mtg_lite-Models-Cards-Card-#ctor-System-String,System-String,MTGO_lite-Models-Manas-Mana,System-Drawing-Bitmap- 'mtg_lite.Models.Cards.Card.#ctor(System.String,System.String,MTGO_lite.Models.Manas.Mana,System.Drawing.Bitmap)')
+  - [ChangeTapped(value)](#M-mtg_lite-Models-Cards-Card-ChangeTapped-System-Boolean- 'mtg_lite.Models.Cards.Card.ChangeTapped(System.Boolean)')
 - [CardDisplay](#T-mtg_lite-Views-UserControls-CardDisplays-CardDisplay 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay')
   - [components](#F-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-components 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.components')
+  - [Card_TappedChanged(sender,e)](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-Card_TappedChanged-System-Object,System-Boolean- 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.Card_TappedChanged(System.Object,System.Boolean)')
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.Dispose(System.Boolean)')
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-InitializeComponent 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.InitializeComponent')
+  - [pictureBox1_Click(sender,e)](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-pictureBox1_Click-System-Object,System-EventArgs- 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.pictureBox1_Click(System.Object,System.EventArgs)')
 - [Creatures](#T-mtg_lite-Models-Cards-Permanent-Creatures 'mtg_lite.Models.Cards.Permanent.Creatures')
   - [CreatureFactory(Type)](#M-mtg_lite-Models-Cards-Permanent-Creatures-CreatureFactory-System-String- 'mtg_lite.Models.Cards.Permanent.Creatures.CreatureFactory(System.String)')
 - [FormGame](#T-mtg_lite-FormGame 'mtg_lite.FormGame')
@@ -101,6 +103,7 @@
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-CardDisplays-RowOfCardsDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.CardDisplays.RowOfCardsDisplay.Dispose(System.Boolean)')
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-CardDisplays-RowOfCardsDisplay-InitializeComponent 'mtg_lite.Views.UserControls.CardDisplays.RowOfCardsDisplay.InitializeComponent')
 - [Sorcery](#T-mtg_lite-Models-Cards-Sorcery 'mtg_lite.Models.Cards.Sorcery')
+  - [#ctor(name,type,manaCost,picture)](#M-mtg_lite-Models-Cards-Sorcery-#ctor-System-String,System-String,MTGO_lite-Models-Manas-Mana,System-Drawing-Bitmap- 'mtg_lite.Models.Cards.Sorcery.#ctor(System.String,System.String,MTGO_lite.Models.Manas.Mana,System.Drawing.Bitmap)')
   - [SorceryFactory(Type)](#M-mtg_lite-Models-Cards-Sorcery-SorceryFactory-System-String- 'mtg_lite.Models.Cards.Sorcery.SorceryFactory(System.String)')
 - [TopCardZoneDisplay](#T-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay 'mtg_lite.Views.UserControls.ZoneDisplays.TopCardZoneDisplay')
   - [components](#F-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay-components 'mtg_lite.Views.UserControls.ZoneDisplays.TopCardZoneDisplay.components')
@@ -126,9 +129,9 @@ Bootstrap the application configuration.
 Bootstrap the application as follows:
 
 ```
- Application.EnableVisualStyles();
- Application.SetCompatibleTextRenderingDefault(false);
- Application.SetHighDpiMode(HighDpiMode.SystemAware);
+ global::System.Windows.Forms.Application.EnableVisualStyles();
+ global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+ global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);
 ```
 
 ##### Parameters
@@ -198,6 +201,42 @@ mtg_lite.Models.Zones
 | ---- | ---- | ----------- |
 | handsName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | the name of the hand work like the library |
 
+<a name='T-mtg_lite-Models-Cards-Card'></a>
+## Card `type`
+
+##### Namespace
+
+mtg_lite.Models.Cards
+
+<a name='M-mtg_lite-Models-Cards-Card-#ctor-System-String,System-String,MTGO_lite-Models-Manas-Mana,System-Drawing-Bitmap-'></a>
+### #ctor(name,type,manaCost,picture) `constructor`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Nom de la carte |
+| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Type de la carte |
+| manaCost | [MTGO_lite.Models.Manas.Mana](#T-MTGO_lite-Models-Manas-Mana 'MTGO_lite.Models.Manas.Mana') | Le coût de la carte |
+| picture | [System.Drawing.Bitmap](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Bitmap 'System.Drawing.Bitmap') | L'image de la carte qui est situé dans le fichier Ressource |
+
+<a name='M-mtg_lite-Models-Cards-Card-ChangeTapped-System-Boolean-'></a>
+### ChangeTapped(value) `method`
+
+##### Summary
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | verifie si la carte est tapped (true) ou elle ne l'est pas(false) ( |
+
 <a name='T-mtg_lite-Views-UserControls-CardDisplays-CardDisplay'></a>
 ## CardDisplay `type`
 
@@ -211,6 +250,20 @@ mtg_lite.Views.UserControls.CardDisplays
 ##### Summary
 
 Variable nécessaire au concepteur.
+
+<a name='M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-Card_TappedChanged-System-Object,System-Boolean-'></a>
+### Card_TappedChanged(sender,e) `method`
+
+##### Summary
+
+event handler pour changer si tapped ou non
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| sender | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | la carte qui est tapped |
+| e | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | E |
 
 <a name='M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-Dispose-System-Boolean-'></a>
 ### Dispose(disposing) `method`
@@ -236,6 +289,20 @@ le contenu de cette méthode avec l'éditeur de code.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-pictureBox1_Click-System-Object,System-EventArgs-'></a>
+### pictureBox1_Click(sender,e) `method`
+
+##### Summary
+
+va faire l'affichage de la carte
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| sender | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | la carte cliquer dans le battlefield |
+| e | [System.EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') | E |
 
 <a name='T-mtg_lite-Models-Cards-Permanent-Creatures'></a>
 ## Creatures `type`
@@ -948,6 +1015,22 @@ This method has no parameters.
 ##### Namespace
 
 mtg_lite.Models.Cards
+
+<a name='M-mtg_lite-Models-Cards-Sorcery-#ctor-System-String,System-String,MTGO_lite-Models-Manas-Mana,System-Drawing-Bitmap-'></a>
+### #ctor(name,type,manaCost,picture) `constructor`
+
+##### Summary
+
+Les paramètre suivant sont relier à la Card
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Nom de la carte |
+| type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Type de la carte |
+| manaCost | [MTGO_lite.Models.Manas.Mana](#T-MTGO_lite-Models-Manas-Mana 'MTGO_lite.Models.Manas.Mana') | Le coût de la carte |
+| picture | [System.Drawing.Bitmap](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Bitmap 'System.Drawing.Bitmap') | L'image de la carte qui est situé dans le fichier Ressource |
 
 <a name='M-mtg_lite-Models-Cards-Sorcery-SorceryFactory-System-String-'></a>
 ### SorceryFactory(Type) `method`

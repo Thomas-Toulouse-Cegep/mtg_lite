@@ -11,9 +11,6 @@ namespace mtg_lite.Models.Zones
         public Hand(List<Card> cards, Player player) : base(cards, player)
         {
             cards = cards.ToList();
-            // player.Hand.AddCard(cards);
-            /*CardAdded?.Invoke(this, card);
-            CardsChanged?.Invoke(this, cards); */
         }
 
         public override void Cardclick(Card card)

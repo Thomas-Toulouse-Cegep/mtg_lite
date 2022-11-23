@@ -29,5 +29,10 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
                 flowLayoutPanel.Controls.Add(manaColorDisplay);
             }
         }
+
+        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

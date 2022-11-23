@@ -35,9 +35,10 @@
             // 
             // picIcon
             // 
-            this.picIcon.Location = new System.Drawing.Point(3, 3);
+            this.picIcon.Location = new System.Drawing.Point(2, 2);
+            this.picIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picIcon.Name = "picIcon";
-            this.picIcon.Size = new System.Drawing.Size(25, 25);
+            this.picIcon.Size = new System.Drawing.Size(20, 20);
             this.picIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picIcon.TabIndex = 0;
             this.picIcon.TabStop = false;
@@ -45,20 +46,23 @@
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(34, 3);
+            this.lblQuantity.Location = new System.Drawing.Point(27, 2);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(38, 25);
+            this.lblQuantity.Size = new System.Drawing.Size(30, 20);
             this.lblQuantity.TabIndex = 1;
             this.lblQuantity.Text = "qty";
+            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
             // 
             // ManaColorDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.picIcon);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManaColorDisplay";
-            this.Size = new System.Drawing.Size(80, 31);
+            this.Size = new System.Drawing.Size(64, 25);
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -54,7 +54,7 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             }
             catch (Exception)
             {
-                MessageBox.Show("impossible de jouer la carte");
+                MessageBox.Show("Card can't be play");
             }
         }
 

@@ -66,10 +66,10 @@ namespace mtg_lite.Models.Players
             {
                 if (card.IsPermanent)
                 {
-
                 }
                 else
                 {
+                    graveyard.AddCard(card);
                     //====> sorcery <====\\
                 }
             }
@@ -78,13 +78,15 @@ namespace mtg_lite.Models.Players
                 switch (card.Type)
                 {
                     case "Creatures":                       
+
                         manaPool.Pay(card.ManaCost);
                         break;
-                        
+
                     case "Land":
+
                         manaPool.Add(card.ManaCost);
                         break;
-                        
+
                     case "Sorcery":
                         manaPool.Pay(card.ManaCost);
                         break;

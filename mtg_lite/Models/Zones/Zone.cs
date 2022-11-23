@@ -32,20 +32,10 @@ namespace mtg_lite.Models.Zones
 
         public event EventHandler<Card>? CardRemoved;
 
-        public event EventHandler<Card>? CardRotated;
-
         public Zone(List<Card> cards, Player player)
         {
             this.cards = cards;
             this.player = player;
-        }
-
-        public void CardRotate(Card cardToRotate)
-        {
-            cardToRotate.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
-            CardRotated?.Invoke(this, cardToRotate);
-
-            CardsChanged?.Invoke(this, cards);
         }
 
         public void AddCard(Card card)

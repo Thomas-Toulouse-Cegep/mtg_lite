@@ -1,5 +1,6 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Players;
+using MTGO_lite.Models.Manas;
 
 namespace mtg_lite.Models.Zones
 {
@@ -16,6 +17,7 @@ namespace mtg_lite.Models.Zones
             {
                 card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
                 card.ChangeTapped(!card.Tapped);
+
                 if (card.Tapped)
                 {
                     player.ManaPool.Add(card.ManaCost);
@@ -26,6 +28,7 @@ namespace mtg_lite.Models.Zones
         public static void Card_TappedChanged(object? card, bool cardTapped)
         {
             // card.Tapped = cardTapped;
+
         }
 
         public override string ToString()

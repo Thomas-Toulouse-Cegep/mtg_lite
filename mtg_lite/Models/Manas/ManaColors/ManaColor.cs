@@ -6,6 +6,7 @@ namespace MTGO_lite.Models.Manas.ManaColors
     public abstract class ManaColor
     {
         public event EventHandler<ManaColor>? QuantityChanged;
+
         public event EventHandler<int>? QuantityChangedInt;
 
         protected int quantity;

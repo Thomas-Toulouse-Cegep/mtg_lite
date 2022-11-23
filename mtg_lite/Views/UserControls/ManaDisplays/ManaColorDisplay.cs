@@ -1,5 +1,4 @@
-﻿using mtg_lite.Models.Zones;
-using MTGO_lite.Models.Manas.ManaColors;
+﻿using MTGO_lite.Models.Manas.ManaColors;
 
 namespace mtg_lite.Views.UserControls.ManaDisplays
 {
@@ -34,7 +33,7 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
             if (manaColor is null) { return; }
             lblQuantity.Text = manaColor.Quantity.ToString();
         }
-        
+
         private void ManaColorSubscribe()
         {
             if (manaColor is null) { return; }

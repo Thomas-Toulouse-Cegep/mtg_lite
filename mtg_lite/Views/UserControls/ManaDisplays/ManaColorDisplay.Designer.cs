@@ -52,6 +52,9 @@
             this.lblQuantity.Size = new System.Drawing.Size(30, 20);
             this.lblQuantity.TabIndex = 1;
             this.lblQuantity.Text = "qty";
+
+            //this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
+
             // 
             // ManaColorDisplay
             // 

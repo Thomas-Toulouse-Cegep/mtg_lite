@@ -18,15 +18,14 @@ namespace mtg_lite.Models.Zones
             {
                 return;
             }
-            if (card.Type =="Land")
+            else if (card.Type == "Land")
             {
                 RemoveCard(card);
             }
-            if (player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
+            else if (player.ManaPool.payable(card.ManaCost) == true) //check mana player total and mana card cost
             {
-                return;
+                RemoveCard(card);
             }
-            RemoveCard(card);
         }
 
         public override string ToString()

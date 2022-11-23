@@ -43,8 +43,9 @@ namespace mtg_lite.Models.Cards
         ///
         /// </summary>
         /// <param name="value">verifie si la carte est tapped (true) ou elle ne l'est pas(false) (</param>
-        private void ChangeTapped(bool value)
+        public void ChangeTapped(bool value)
         {
+            this.tapped = value;
             TappedChanged?.Invoke(this, tapped);
         }
 

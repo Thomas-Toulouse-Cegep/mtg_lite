@@ -5,6 +5,9 @@ namespace MTGO_lite.Models.Manas.ManaColors
     [DebuggerDisplay("{ColorName}({Quantity})")]
     public abstract class ManaColor
     {
+        public event EventHandler<ManaColor>? QuantityChanged;
+        public event EventHandler<int>? QuantityChangedInt;
+
         protected int quantity;
 
         public int Quantity { get => quantity; }
@@ -24,16 +27,19 @@ namespace MTGO_lite.Models.Manas.ManaColors
         public void Add(ManaColor mana)
         {
             this.quantity += mana.quantity;
+            QuantityChanged?.Invoke(this, mana);
         }
 
         public void Remove(ManaColor mana)
         {
             this.quantity -= mana.quantity;
+            QuantityChanged?.Invoke(this, mana);
         }
 
         public void Remove(int quantity)
         {
             this.quantity -= quantity;
+            QuantityChangedInt?.Invoke(this, quantity);
         }
 
         public override string ToString()

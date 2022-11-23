@@ -1,4 +1,5 @@
-﻿using mtg_lite.Models.Zones;
+﻿using mtg_lite.Models.Cards;
+using mtg_lite.Models.Zones;
 
 namespace mtg_lite.Views.UserControls.ZoneDisplays
 {

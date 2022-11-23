@@ -45,7 +45,9 @@ namespace mtg_lite.Models.Players
             if (card.Type == "Sorcery")
             {
                 graveyard.AddCard(card);
+                return;
             }
+
             battlefield.AddCard(card);
         }
 
@@ -77,7 +79,7 @@ namespace mtg_lite.Models.Players
             {
                 switch (card.Type)
                 {
-                    case "Creatures":                       
+                    case "Creatures":
 
                         manaPool.Pay(card.ManaCost);
                         break;

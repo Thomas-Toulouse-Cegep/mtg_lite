@@ -12,14 +12,15 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            //player.Battlefield.CardRotate(card);
-            //card.Tapped = true;
-            card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
-            card.ChangeTapped(!card.Tapped);
-
-            // CardRotate(card); // rotate the card situated in Zone.cs
-            // card.TappedChanged += Card_TappedChanged;
-            // player.PlayCard(card); // do things with mana value
+            if (card.Type == "Land")
+            {
+                card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                card.ChangeTapped(!card.Tapped);
+                if (card.Tapped)
+                {
+                    player.ManaPool.Add(card.ManaCost);
+                }
+            }
         }
 
         public static void Card_TappedChanged(object? card, bool cardTapped)

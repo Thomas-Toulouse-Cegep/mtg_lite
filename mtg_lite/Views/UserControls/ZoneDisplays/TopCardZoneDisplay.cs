@@ -47,7 +47,14 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
 
         private void cardDisplay_CardClicked(object sender, Models.Cards.Card card)
         {
-            zone.Cardclick(card);
+            try
+            {
+                zone.Cardclick(card);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void Zone_CardAdded(object? sender, Models.Cards.Card e)

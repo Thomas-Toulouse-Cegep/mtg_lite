@@ -90,7 +90,6 @@ namespace MTGO_lite.Models.Manas
                                         }
                                         if (manaColors[Color.Key].Quantity == 0)
                                         {
-                                            
                                         }
                                         else
                                         {
@@ -188,7 +187,7 @@ namespace MTGO_lite.Models.Manas
                     {
                         continue;
                     }
-                }                
+                }
                 if (manaColors[manaColor.Key] < manaColor.Value)
                 {
                     return false;

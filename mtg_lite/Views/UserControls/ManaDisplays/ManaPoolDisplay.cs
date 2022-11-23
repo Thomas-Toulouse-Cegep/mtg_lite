@@ -32,7 +32,6 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
 
         private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

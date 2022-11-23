@@ -28,18 +28,14 @@ namespace mtg_lite.Views.UserControls.CardDisplays
             InitDisplay();
         }
 
+        /// <summary>
+        /// event handler pour changer si tapped ou non
+        /// </summary>
+        /// <param name="sender">la carte qui est tapped</param>
+        /// <param name="e">E</param>
         private void Card_TappedChanged(object? sender, bool e)
         {
             sender = card.Picture;
-            // sender.ToString();
-            //card.Picture.Dispose();
-            //card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
-            // card.Picture = sender;
-
-            //object? value = card.Tapped;
-            //card.Picture = e;
-            //card.Picture = card.Picture;
-            //card.Picture = card.Picture;
         }
 
         private void InitDisplay()
@@ -49,6 +45,11 @@ namespace mtg_lite.Views.UserControls.CardDisplays
             picCard.Image = image;
         }
 
+        /// <summary>
+        /// va faire l'affichage de la carte
+        /// </summary>
+        /// <param name="sender">la carte cliquer dans le battlefield</param>
+        /// <param name="e">E</param>
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (card is null) { return; }

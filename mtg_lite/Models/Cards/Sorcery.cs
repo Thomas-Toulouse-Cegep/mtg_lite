@@ -6,6 +6,13 @@ namespace mtg_lite.Models.Cards
     {
         private bool isPermanent1 = false;
 
+        /// <summary>
+        /// Les paramètre suivant sont relier à la Card
+        /// </summary>
+        /// <param name = "name" > Nom de la carte</param>
+        /// <param name="type">Type de la carte</param>
+        /// <param name="manaCost">Le coût de la carte</param>
+        /// <param name="picture">L'image de la carte qui est situé dans le fichier Ressource</param>
         public Sorcery(string name, string type, Mana manaCost, Bitmap picture) : base(name, type, manaCost, picture)
         {
         }

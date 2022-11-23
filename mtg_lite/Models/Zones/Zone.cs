@@ -42,8 +42,9 @@ namespace mtg_lite.Models.Zones
 
         public void CardRotate(Card cardToRotate)
         {
-            cardToRotate.Picture.RotateFlip(RotateFlipType.RotateNoneFlipNone);
+            cardToRotate.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
             CardRotated?.Invoke(this, cardToRotate);
+
             CardsChanged?.Invoke(this, cards);
         }
 

@@ -31,5 +31,9 @@ namespace mtg_lite.Views.UserControls.ManaDisplays
             if (manaColor is null) { return; }
             lblQuantity.Text = manaColor.Quantity.ToString();
         }
+
+        private void lblQuantity_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

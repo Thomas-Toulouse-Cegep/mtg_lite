@@ -3,6 +3,7 @@
 namespace mtg_lite.Controllers
 {
     public class Controller
+
     {
         private Player player;
 

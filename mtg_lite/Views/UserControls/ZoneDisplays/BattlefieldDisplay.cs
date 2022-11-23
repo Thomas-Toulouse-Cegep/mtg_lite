@@ -1,18 +1,4 @@
-﻿using mtg_lite.Models.Cards;
-using mtg_lite.Models.Cards.Permanent;
-using mtg_lite.Models.Players;
-using mtg_lite.Models.Zones;
-using mtg_lite.Views.UserControls.CardDisplays;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
+﻿using mtg_lite.Models.Zones;
 
 namespace mtg_lite.Views.UserControls.ZoneDisplays
 {
@@ -65,16 +51,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             try
             {
                 battlefield.Cardclick(card);
-                if (card.Tapped == false)
-                {
-                    card.Picture.RotateFlip(RotateFlipType.Rotate90FlipX);
-
-                    DisplayBattlefield();
-                }
             }
             catch (Exception)
             {
-                MessageBox.Show("i");
+                MessageBox.Show("impossible de jouer la carte");
             }
         }
 
@@ -83,6 +63,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         }
 
         private void landsDisplay_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void grpBattlefield_Enter(object sender, EventArgs e)
         {
         }
     }

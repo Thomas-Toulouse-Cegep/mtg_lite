@@ -1,11 +1,5 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Players;
-using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
@@ -22,8 +16,12 @@ namespace mtg_lite.Models.Zones
         }
 
         public override void Cardclick(Card card)
-        {
+        {   //check if card can be play
             if (cards.Count == 0)
+            {
+                return;
+            }
+            else if (card.Type != "Land" && player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
             {
                 return;
             }

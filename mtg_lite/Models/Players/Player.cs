@@ -1,14 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using mtg_lite.Models.Cards;
-using mtg_lite.Models.Cards.Permanent;
+﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Zones;
 using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Players
 {
@@ -24,7 +16,9 @@ namespace mtg_lite.Models.Players
         private Zone hand;
         private Zone library;
 
+        ///
         public Mana ManaPool { get => manaPool; }
+
         public Battlefield Battlefield { get => battlefield; }
         public Zone Graveyard { get => graveyard; }
         public Zone Hand { get => hand; }
@@ -61,21 +55,23 @@ namespace mtg_lite.Models.Players
             hand.AddCard(card);
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="card"> the card  the player is playing</param>
         public void PlayCard(Card card)
         {
             //La pool de mana pour les test se trouve en debut code
 
             if (card.Tapped)
             {
-
                 if (card.IsPermanent)
                 {
-                    
+
                 }
                 else
                 {
                     //====> sorcery <====\\
-
                 }
             }
             else
@@ -83,11 +79,13 @@ namespace mtg_lite.Models.Players
                 switch (card.Type)
                 {
                     case "Creatures":                       
-                        manaPool.Pay(card.ManaCost);
+                        manaPool.Pay(card.ManaCost);r
                         break;
+                        
                     case "Land":
                         manaPool.Add(card.ManaCost);
                         break;
+                        
                     case "Sorcery":
                         manaPool.Pay(card.ManaCost);
                         break;

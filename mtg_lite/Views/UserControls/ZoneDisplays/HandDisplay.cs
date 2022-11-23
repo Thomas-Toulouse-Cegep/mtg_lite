@@ -1,14 +1,4 @@
-﻿using mtg_lite.Models.Players;
-using mtg_lite.Models.Zones;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using mtg_lite.Models.Zones;
 
 namespace mtg_lite.Views.UserControls.ZoneDisplays
 {
@@ -75,7 +65,6 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-
             }
         }
 

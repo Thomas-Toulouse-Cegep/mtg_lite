@@ -1,9 +1,4 @@
 ﻿using MTGO_lite.Models.Manas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Cards.Permanent
 {
@@ -13,6 +8,11 @@ namespace mtg_lite.Models.Cards.Permanent
         {
         }
 
+        /// <summary>
+        /// generate Creatures card
+        /// </summary>
+        /// <param name="Type">the type of card</param>
+        /// <returns> return the type of the card (Creatures)</returns>
         public static Card CreatureFactory(string Type)
         {
             Card CardType = null;
@@ -23,10 +23,12 @@ namespace mtg_lite.Models.Cards.Permanent
                     Mana manaAlphaMyr = new Mana(0, 0, 0, 0, 0, 2);
                     CardType = new Creatures("alpha_myr", "Creatures", manaAlphaMyr, Resource.alpha_myr);
                     break;
+
                 case "barony_vampire":
                     Mana manaBaronyVampire = new Mana(1, 0, 0, 0, 0, 2);
                     CardType = new Creatures("barony_vampire", "Creatures", manaBaronyVampire, Resource.barony_vampire);
                     break;
+
                 case "fusion_elemental":
                     Mana manaFusionElemental = new Mana(1, 1, 1, 1, 1, 0);
                     CardType = new Creatures("fusion_elemental", "Creatures", manaFusionElemental, Resource.fusion_elemental);

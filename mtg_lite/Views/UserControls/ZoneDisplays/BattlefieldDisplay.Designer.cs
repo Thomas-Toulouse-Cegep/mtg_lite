@@ -57,6 +57,7 @@
             this.grpBattlefield.TabIndex = 1;
             this.grpBattlefield.TabStop = false;
             this.grpBattlefield.Text = "Battlefield";
+            this.grpBattlefield.Enter += new System.EventHandler(this.grpBattlefield_Enter);
             // 
             // landsDisplay
             // 

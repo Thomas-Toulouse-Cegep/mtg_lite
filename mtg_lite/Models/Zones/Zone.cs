@@ -1,12 +1,6 @@
 ﻿using mtg_lite.Models.Cards;
 using mtg_lite.Models.Cards.CardBacks;
 using mtg_lite.Models.Players;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mtg_lite.Models.Zones
 {
@@ -38,10 +32,19 @@ namespace mtg_lite.Models.Zones
 
         public event EventHandler<Card>? CardRemoved;
 
+        public event EventHandler<Card>? CardRotated;
+
         public Zone(List<Card> cards, Player player)
         {
             this.cards = cards;
             this.player = player;
+        }
+
+        public void CardRotate(Card cardToRotate)
+        {
+            cardToRotate.Picture.RotateFlip(RotateFlipType.RotateNoneFlipNone);
+            CardRotated?.Invoke(this, cardToRotate);
+            CardsChanged?.Invoke(this, cards);
         }
 
         public void AddCard(Card card)

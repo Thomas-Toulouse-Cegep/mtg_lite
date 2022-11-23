@@ -1,6 +1,9 @@
 <a name='assembly'></a>
 # mtg_lite
 
+## Dépendances
+<a href="https://github.com/lijunle/Vsxmd">Vsxmd</a>
+
 ## Contents
 
 - [ApplicationConfiguration](#T-mtg_lite-ApplicationConfiguration 'mtg_lite.ApplicationConfiguration')

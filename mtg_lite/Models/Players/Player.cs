@@ -23,7 +23,9 @@ namespace mtg_lite.Models.Players
         private Zone hand;
         private Zone library;
 
+        ///
         public Mana ManaPool { get => manaPool; }
+
         public Battlefield Battlefield { get => battlefield; }
         public Zone Graveyard { get => graveyard; }
         public Zone Hand { get => hand; }
@@ -60,6 +62,10 @@ namespace mtg_lite.Models.Players
             hand.AddCard(card);
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="card"> the card  the player is playing</param>
         public void PlayCard(Card card)
         {
             //Les pool de mana pour les test se trouve en debut code
@@ -70,12 +76,12 @@ namespace mtg_lite.Models.Players
 
                 if (card.IsPermanent)
                 {
-                  //  MessageBox.Show("Is permanent."); //test message
+                    //  MessageBox.Show("Is permanent."); //test message
                 }
                 else
                 {
                     //====> sorcery <====\\
-                  // MessageBox.Show("Is not permanent."); //test message
+                    // MessageBox.Show("Is not permanent."); //test message
                 }
             }
             else

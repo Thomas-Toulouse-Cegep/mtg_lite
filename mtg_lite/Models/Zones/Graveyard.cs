@@ -17,7 +17,7 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public override string ToString()

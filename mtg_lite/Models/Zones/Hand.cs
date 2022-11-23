@@ -27,7 +27,7 @@ namespace mtg_lite.Models.Zones
             {
                 return;
             }
-            if (player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
+            else if (card.Type != "Land" && player.ManaPool.payable(card.ManaCost) == false) //check mana player total and mana card cost
             {
                 return;
             }

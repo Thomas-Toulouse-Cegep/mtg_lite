@@ -27,6 +27,10 @@ namespace mtg_lite.Models.Zones
             return new List<Card>();
         }
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <returns>return a list for the deck</returns>
         public static List<Card> CreateList()
         {
             List<Card> list = new List<Card>();

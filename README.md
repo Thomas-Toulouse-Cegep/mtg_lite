@@ -18,6 +18,8 @@
   - [components](#F-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-components 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.components')
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.Dispose(System.Boolean)')
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-CardDisplays-CardDisplay-InitializeComponent 'mtg_lite.Views.UserControls.CardDisplays.CardDisplay.InitializeComponent')
+- [Creatures](#T-mtg_lite-Models-Cards-Permanent-Creatures 'mtg_lite.Models.Cards.Permanent.Creatures')
+  - [CreatureFactory(Type)](#M-mtg_lite-Models-Cards-Permanent-Creatures-CreatureFactory-System-String- 'mtg_lite.Models.Cards.Permanent.Creatures.CreatureFactory(System.String)')
 - [FormGame](#T-mtg_lite-FormGame 'mtg_lite.FormGame')
   - [components](#F-mtg_lite-FormGame-components 'mtg_lite.FormGame.components')
   - [Dispose(disposing)](#M-mtg_lite-FormGame-Dispose-System-Boolean- 'mtg_lite.FormGame.Dispose(System.Boolean)')
@@ -26,6 +28,8 @@
   - [components](#F-mtg_lite-Views-UserControls-ZoneDisplays-HandDisplay-components 'mtg_lite.Views.UserControls.ZoneDisplays.HandDisplay.components')
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-ZoneDisplays-HandDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.ZoneDisplays.HandDisplay.Dispose(System.Boolean)')
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-ZoneDisplays-HandDisplay-InitializeComponent 'mtg_lite.Views.UserControls.ZoneDisplays.HandDisplay.InitializeComponent')
+- [Land](#T-mtg_lite-Models-Cards-Permanent-Land 'mtg_lite.Models.Cards.Permanent.Land')
+  - [LandFactory(Type)](#M-mtg_lite-Models-Cards-Permanent-Land-LandFactory-System-String- 'mtg_lite.Models.Cards.Permanent.Land.LandFactory(System.String)')
 - [Library](#T-mtg_lite-Models-Zones-Library 'mtg_lite.Models.Zones.Library')
   - [#ctor(cards,player)](#M-mtg_lite-Models-Zones-Library-#ctor-System-Collections-Generic-List{mtg_lite-Models-Cards-Card},mtg_lite-Models-Players-Player- 'mtg_lite.Models.Zones.Library.#ctor(System.Collections.Generic.List{mtg_lite.Models.Cards.Card},mtg_lite.Models.Players.Player)')
   - [TopCard](#P-mtg_lite-Models-Zones-Library-TopCard 'mtg_lite.Models.Zones.Library.TopCard')
@@ -96,6 +100,8 @@
   - [components](#F-mtg_lite-Views-UserControls-CardDisplays-RowOfCardsDisplay-components 'mtg_lite.Views.UserControls.CardDisplays.RowOfCardsDisplay.components')
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-CardDisplays-RowOfCardsDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.CardDisplays.RowOfCardsDisplay.Dispose(System.Boolean)')
   - [InitializeComponent()](#M-mtg_lite-Views-UserControls-CardDisplays-RowOfCardsDisplay-InitializeComponent 'mtg_lite.Views.UserControls.CardDisplays.RowOfCardsDisplay.InitializeComponent')
+- [Sorcery](#T-mtg_lite-Models-Cards-Sorcery 'mtg_lite.Models.Cards.Sorcery')
+  - [SorceryFactory(Type)](#M-mtg_lite-Models-Cards-Sorcery-SorceryFactory-System-String- 'mtg_lite.Models.Cards.Sorcery.SorceryFactory(System.String)')
 - [TopCardZoneDisplay](#T-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay 'mtg_lite.Views.UserControls.ZoneDisplays.TopCardZoneDisplay')
   - [components](#F-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay-components 'mtg_lite.Views.UserControls.ZoneDisplays.TopCardZoneDisplay.components')
   - [Dispose(disposing)](#M-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay-Dispose-System-Boolean- 'mtg_lite.Views.UserControls.ZoneDisplays.TopCardZoneDisplay.Dispose(System.Boolean)')
@@ -231,6 +237,30 @@ le contenu de cette méthode avec l'éditeur de code.
 
 This method has no parameters.
 
+<a name='T-mtg_lite-Models-Cards-Permanent-Creatures'></a>
+## Creatures `type`
+
+##### Namespace
+
+mtg_lite.Models.Cards.Permanent
+
+<a name='M-mtg_lite-Models-Cards-Permanent-Creatures-CreatureFactory-System-String-'></a>
+### CreatureFactory(Type) `method`
+
+##### Summary
+
+generate Creatures card
+
+##### Returns
+
+return the type of the card (Creatures)
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | the type of card |
+
 <a name='T-mtg_lite-FormGame'></a>
 ## FormGame `type`
 
@@ -308,6 +338,30 @@ le contenu de cette méthode avec l'éditeur de code.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-mtg_lite-Models-Cards-Permanent-Land'></a>
+## Land `type`
+
+##### Namespace
+
+mtg_lite.Models.Cards.Permanent
+
+<a name='M-mtg_lite-Models-Cards-Permanent-Land-LandFactory-System-String-'></a>
+### LandFactory(Type) `method`
+
+##### Summary
+
+generate card Land
+
+##### Returns
+
+return the card type
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | the type of card |
 
 <a name='T-mtg_lite-Models-Zones-Library'></a>
 ## Library `type`
@@ -887,6 +941,30 @@ le contenu de cette méthode avec l'éditeur de code.
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-mtg_lite-Models-Cards-Sorcery'></a>
+## Sorcery `type`
+
+##### Namespace
+
+mtg_lite.Models.Cards
+
+<a name='M-mtg_lite-Models-Cards-Sorcery-SorceryFactory-System-String-'></a>
+### SorceryFactory(Type) `method`
+
+##### Summary
+
+create card (Sorcery)
+
+##### Returns
+
+return  the card type
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Type | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | determine card type |
 
 <a name='T-mtg_lite-Views-UserControls-ZoneDisplays-TopCardZoneDisplay'></a>
 ## TopCardZoneDisplay `type`

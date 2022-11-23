@@ -7,7 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\Users\thoma\source\repos\mtg_lite\readme.md</DocumentationFile>
+    <DocumentationFile>C:\Users\thoma\source\repos\mtg_lite\README.md</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

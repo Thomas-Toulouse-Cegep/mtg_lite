@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace MTGO_lite.Models.Manas.ManaColors
 {
@@ -49,7 +43,7 @@ namespace MTGO_lite.Models.Manas.ManaColors
 
         public static bool operator <(ManaColor a, ManaColor b)
         {
-            return a.quantity < b.quantity; 
+            return a.quantity < b.quantity;
         }
 
         public static bool operator >(ManaColor a, ManaColor b)

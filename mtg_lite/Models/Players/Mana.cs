@@ -66,62 +66,48 @@ namespace MTGO_lite.Models.Manas
             int colorless = manaToPay.Colorless.Quantity;
             int manaQ = 0;
 
-            if (payable(manaToPay))
+            foreach (var manaColor in manaToPay.manaColors)
             {
-                foreach (var manaColor in manaToPay.manaColors)
+                if (manaColor.Key == ManaColorless.Name)
                 {
-                    if (manaColor.Key == ManaColorless.Name)
+                    if (colorless > 0)
                     {
-                        if (colorless > 0)
+                        if (manaColors[ManaColorless.Name].Quantity == colorless)
                         {
-                            if (manaColors[ManaColorless.Name].Quantity == colorless)
+                            manaColors[ManaColorless.Name].Remove(manaToPay.Colorless);
+                        }
+                        else
+                        {
+                            while (colorless > 0)
                             {
-                                manaColors[ManaColorless.Name].Remove(manaToPay.Colorless);
-                            }
-                            else
-                            {
-                                while (colorless > 0)
+                                foreach (var Color in manaToPay.manaColors)
                                 {
-                                    foreach (var Color in manaToPay.manaColors)
+                                    if (Color.Key == ManaColorless.Name)
                                     {
-                                        if (Color.Key == ManaColorless.Name)
+                                        continue;
+                                    }
+                                    if (manaColors[Color.Key].Quantity == 0)
+                                    {
+
+                                    }
+                                    else
+                                    {
+                                        manaColors[Color.Key].Remove(1);
+                                        colorless--;
+                                        if (colorless == 0)
                                         {
-                                            continue;
-                                        }
-                                        if (manaColors[Color.Key].Quantity == 0)
-                                        {
-                                            
-                                        }
-                                        else
-                                        {
-                                            manaColors[Color.Key].Remove(1);
-                                            colorless--;
-                                            if (colorless == 0)
-                                            {
-                                                break;
-                                            }
+                                            break;
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    else
-                    {
-                        manaColors[manaColor.Key].Remove(manaColor.Value);
-                    }
                 }
-                MessageBox.Show("Pool :" + "\n" +
-                            manaColors[ManaBlack.Name].ToString() + "\n" +
-                            manaColors[ManaBlue.Name].ToString() + "\n" +
-                            manaColors[ManaColorless.Name].ToString() + "\n" +
-                            manaColors[ManaGreen.Name].ToString() + "\n" +
-                            manaColors[ManaRed.Name].ToString() + "\n" +
-                            manaColors[ManaWhite.Name].ToString());
-            }
-            else
-            {
-                throw new Exception("non payable");
+                else
+                {
+                    manaColors[manaColor.Key].Remove(manaColor.Value);
+                }
             }
         }
 
@@ -140,14 +126,6 @@ namespace MTGO_lite.Models.Manas
         /// <returns> return a true or a false if you can pay to use this card</returns>
         public bool payable(Mana manaToPay)
         {
-            MessageBox.Show("Pool :" + "\n" +
-                            manaColors[ManaBlack.Name].ToString() + "\n" +
-                            manaColors[ManaBlue.Name].ToString() + "\n" +
-                            manaColors[ManaColorless.Name].ToString() + "\n" +
-                            manaColors[ManaGreen.Name].ToString() + "\n" +
-                            manaColors[ManaRed.Name].ToString() + "\n" +
-                            manaColors[ManaWhite.Name].ToString());
-
             int manaTotal = manaToPay.Black.Quantity +
                             manaToPay.Blue.Quantity +
                             manaToPay.Colorless.Quantity +
@@ -176,12 +154,12 @@ namespace MTGO_lite.Models.Manas
                             }
                             else
                             {
-                                return false;
+                                throw new Exception("Vous n'avez pas assez de mana pour jouer cette carte.");
                             }
                         }
                         else
                         {
-                            return false;
+                            throw new Exception("Vous n'avez pas assez de mana pour jouer cette carte.");
                         }
                     }
                     else
@@ -191,7 +169,7 @@ namespace MTGO_lite.Models.Manas
                 }                
                 if (manaColors[manaColor.Key] < manaColor.Value)
                 {
-                    return false;
+                    throw new Exception("Vous n'avez pas assez de mana pour jouer cette carte.");
                 }
             }
             return true;

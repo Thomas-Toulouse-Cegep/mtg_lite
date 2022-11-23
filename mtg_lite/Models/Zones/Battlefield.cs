@@ -17,8 +17,18 @@ namespace mtg_lite.Models.Zones
             {
                 card.Picture.RotateFlip(RotateFlipType.Rotate180FlipNone);
                 card.ChangeTapped(!card.Tapped);
-                player.ManaPool.Add(card.ManaCost);
+
+                if (card.Tapped)
+                {
+                    player.ManaPool.Add(card.ManaCost);
+                }
             }
+        }
+
+        public static void Card_TappedChanged(object? card, bool cardTapped)
+        {
+            // card.Tapped = cardTapped;
+
         }
 
         public override string ToString()

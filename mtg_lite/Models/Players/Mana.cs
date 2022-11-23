@@ -15,29 +15,35 @@ namespace MTGO_lite.Models.Manas
         {
             get => manaColors[ManaWhite.Name];
         }
+
         public ManaColor Blue
         {
             get => manaColors[ManaBlue.Name];
         }
+
         public ManaColor Black
         {
             get => manaColors[ManaBlack.Name];
         }
+
         public ManaColor Red
         {
             get => manaColors[ManaRed.Name];
         }
+
         public ManaColor Green
         {
             get => manaColors[ManaGreen.Name];
         }
+
         public ManaColor Colorless
         {
             get => manaColors[ManaColorless.Name];
         }
+
         public Dictionary<string, ManaColor> ManaColors { get => manaColors; }
 
-        public Mana(): this(0, 0, 0, 0, 0, 0)
+        public Mana() : this(0, 0, 0, 0, 0, 0)
         {
         }
 
@@ -54,6 +60,11 @@ namespace MTGO_lite.Models.Manas
             };
         }
 
+        /// <summary>
+        /// verify if user can pay for this card
+        /// </summary>
+        /// <param name="manaToPay">the mana to remove from the mana pool</param>
+        /// <exception cref="Exception"> tell user he can't pay for this card</exception>
         public void Pay(Mana manaToPay)
         {
             if (payable(manaToPay))
@@ -66,7 +77,7 @@ namespace MTGO_lite.Models.Manas
             else
             {
                 throw new Exception("non payable");
-            }            
+            }
         }
 
         public void Add(Mana mana)
@@ -77,6 +88,11 @@ namespace MTGO_lite.Models.Manas
             }
         }
 
+        /// <summary>
+        /// this function check all the mana type the card use
+        /// </summary>
+        /// <param name="manaToPay"> the cost to pay to use this card</param>
+        /// <returns> return a true or a false if you can pay to use this card</returns>
         public bool payable(Mana manaToPay)
         {
             foreach (var manaColor in manaToPay.manaColors)

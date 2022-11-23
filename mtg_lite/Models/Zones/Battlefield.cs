@@ -18,14 +18,22 @@ namespace mtg_lite.Models.Zones
 
         public override void Cardclick(Card card)
         {
-            if (card.Tapped == false)
+            if (!card.Tapped)
             {
-                card.Tapped = true;
+                //card.Tapped = true;
+                card.TappedChanged += Card_TappedChanged; ;
+                player.PlayCard(card);
+                CardRotate(card);
             }
             else
             {
                 card.Tapped = false;
             }
+        }
+
+        private void Card_TappedChanged(object? sender, bool tapped)
+        {
+            tapped = true;
         }
 
         public override string ToString()

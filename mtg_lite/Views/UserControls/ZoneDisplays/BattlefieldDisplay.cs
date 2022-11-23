@@ -65,16 +65,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
             try
             {
                 battlefield.Cardclick(card);
-                if (card.Tapped == false)
-                {
-                    card.Picture.RotateFlip(RotateFlipType.Rotate90FlipX);
-
-                    DisplayBattlefield();
-                }
             }
             catch (Exception)
             {
-                MessageBox.Show("i");
+                MessageBox.Show("impossible de jouer la carte");
             }
         }
 
@@ -83,6 +77,10 @@ namespace mtg_lite.Views.UserControls.ZoneDisplays
         }
 
         private void landsDisplay_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void grpBattlefield_Enter(object sender, EventArgs e)
         {
         }
     }

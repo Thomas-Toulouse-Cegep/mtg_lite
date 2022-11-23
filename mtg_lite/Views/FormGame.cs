@@ -29,5 +29,13 @@ namespace mtg_lite
         private void handDisplay_Load(object sender, EventArgs e)
         {
         }
+
+        private void battlefieldDisplay_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void graveyardDisplay_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
